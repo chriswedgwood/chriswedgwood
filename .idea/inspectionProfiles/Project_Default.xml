@@ -1,0 +1,87 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <option name="myLocal" value="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="73">
+            <item index="0" class="java.lang.String" itemvalue="django-sekizai" />
+            <item index="1" class="java.lang.String" itemvalue="djangocms_snippet" />
+            <item index="2" class="java.lang.String" itemvalue="djangocms_flash" />
+            <item index="3" class="java.lang.String" itemvalue="djangocms_googlemap" />
+            <item index="4" class="java.lang.String" itemvalue="djangocms_text_ckeditor" />
+            <item index="5" class="java.lang.String" itemvalue="djangocms_file" />
+            <item index="6" class="java.lang.String" itemvalue="Django" />
+            <item index="7" class="java.lang.String" itemvalue="djangocms_video" />
+            <item index="8" class="java.lang.String" itemvalue="South" />
+            <item index="9" class="java.lang.String" itemvalue="djangocms-admin-style" />
+            <item index="10" class="java.lang.String" itemvalue="html5lib" />
+            <item index="11" class="java.lang.String" itemvalue="djangocms_inherit" />
+            <item index="12" class="java.lang.String" itemvalue="djangocms_picture" />
+            <item index="13" class="java.lang.String" itemvalue="djangocms_link" />
+            <item index="14" class="java.lang.String" itemvalue="djangocms_teaser" />
+            <item index="15" class="java.lang.String" itemvalue="django-mptt" />
+            <item index="16" class="java.lang.String" itemvalue="django-classy-tags" />
+            <item index="17" class="java.lang.String" itemvalue="django-cms" />
+            <item index="18" class="java.lang.String" itemvalue="djangocms-teaser" />
+            <item index="19" class="java.lang.String" itemvalue="djangocms-column" />
+            <item index="20" class="java.lang.String" itemvalue="ipython" />
+            <item index="21" class="java.lang.String" itemvalue="six" />
+            <item index="22" class="java.lang.String" itemvalue="djangocms-installer" />
+            <item index="23" class="java.lang.String" itemvalue="djangocms-style" />
+            <item index="24" class="java.lang.String" itemvalue="aldryn-common" />
+            <item index="25" class="java.lang.String" itemvalue="Pillow" />
+            <item index="26" class="java.lang.String" itemvalue="argparse" />
+            <item index="27" class="java.lang.String" itemvalue="django-polymorphic" />
+            <item index="28" class="java.lang.String" itemvalue="djangocms-video" />
+            <item index="29" class="java.lang.String" itemvalue="gnureadline" />
+            <item index="30" class="java.lang.String" itemvalue="djangocms-file" />
+            <item index="31" class="java.lang.String" itemvalue="djangocms-picture" />
+            <item index="32" class="java.lang.String" itemvalue="dj-database-url" />
+            <item index="33" class="java.lang.String" itemvalue="djangocms-flash" />
+            <item index="34" class="java.lang.String" itemvalue="pytz" />
+            <item index="35" class="java.lang.String" itemvalue="Unidecode" />
+            <item index="36" class="java.lang.String" itemvalue="djangocms-googlemap" />
+            <item index="37" class="java.lang.String" itemvalue="django-easy-select2" />
+            <item index="38" class="java.lang.String" itemvalue="djangocms-text-ckeditor" />
+            <item index="39" class="java.lang.String" itemvalue="django-reversion" />
+            <item index="40" class="java.lang.String" itemvalue="easy-thumbnails" />
+            <item index="41" class="java.lang.String" itemvalue="django-parler" />
+            <item index="42" class="java.lang.String" itemvalue="django-admin-sortable" />
+            <item index="43" class="java.lang.String" itemvalue="djangocms-inherit" />
+            <item index="44" class="java.lang.String" itemvalue="django-filer" />
+            <item index="45" class="java.lang.String" itemvalue="djangocms-link" />
+            <item index="46" class="java.lang.String" itemvalue="ipythonDjango" />
+            <item index="47" class="java.lang.String" itemvalue="django-trace-master" />
+            <item index="48" class="java.lang.String" itemvalue="djangocms-slides" />
+            <item index="49" class="java.lang.String" itemvalue="requests" />
+            <item index="50" class="java.lang.String" itemvalue="djangocms-slideshow" />
+            <item index="51" class="java.lang.String" itemvalue="mock" />
+            <item index="52" class="java.lang.String" itemvalue="django-google-maps" />
+            <item index="53" class="java.lang.String" itemvalue="Django-Select2" />
+            <item index="54" class="java.lang.String" itemvalue="aldryn-search" />
+            <item index="55" class="java.lang.String" itemvalue="aldryn_search" />
+            <item index="56" class="java.lang.String" itemvalue="django-datetime-widget" />
+            <item index="57" class="java.lang.String" itemvalue="django-taggit" />
+            <item index="58" class="java.lang.String" itemvalue="haystack" />
+            <item index="59" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="60" class="java.lang.String" itemvalue="raven" />
+            <item index="61" class="java.lang.String" itemvalue="dj-static" />
+            <item index="62" class="java.lang.String" itemvalue="django-storages" />
+            <item index="63" class="java.lang.String" itemvalue="sysenv" />
+            <item index="64" class="java.lang.String" itemvalue="django-haystack" />
+            <item index="65" class="java.lang.String" itemvalue="boto" />
+            <item index="66" class="java.lang.String" itemvalue="pyelasticsearch" />
+            <item index="67" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="68" class="java.lang.String" itemvalue="Whoosh" />
+            <item index="69" class="java.lang.String" itemvalue="django-appconf" />
+            <item index="70" class="java.lang.String" itemvalue="urllib3" />
+            <item index="71" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="72" class="java.lang.String" itemvalue="django-appdata" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
