@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-
+from django import template
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
@@ -11,7 +11,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 
-
+register = template.Library()
 
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
@@ -106,3 +106,10 @@ class BlogCategory(models.Model):
 
     class Meta:
         verbose_name_plural = 'blog categories'
+
+
+@register.assignment_tag(takes_context=True)
+def get_site_root(context):
+    # NB this returns a core.Page, not the implementation-specific model used
+    # so object-comparison to self will return false as objects would differ
+    return context['request'].site.root_page

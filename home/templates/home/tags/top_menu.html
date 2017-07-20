@@ -1,0 +1,28 @@
+{% load demo_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+{# Implementation of bootstrap theme dropdown menu - shows top level links and their children #}
+<nav id="nav-wrap"><a id="toggle-btn" title="Menu" href="#">Menu</a>
+	   	<div class="row">
+            <ul id="nav" class="nav">
+                <li class="{% if calling_page.title == 'Home' %}current{% endif %}"><a href="/">Home</a></li>
+                {% for menuitem in menuitems %}
+                    <li class="{% if menuitem.show_dropdown %}dropdown{% endif %}{% if menuitem.active %}current{% endif %}">
+                        {% if menuitem.show_dropdown %}
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ menuitem.title }} <b class="caret"></b></a>
+                            {% top_menu_children parent=menuitem %}
+                        {% else %}
+                            <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+                        {% endif %}
+                    </li>       
+                {% endfor %}
+            </ul>
+
+
+
+
+
+	   	</div>
+
+	   </nav>
+

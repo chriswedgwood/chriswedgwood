@@ -67,3 +67,6 @@ staticfiles/
 
 .cache/
 
+*.iml
+
+db.sqllite3
