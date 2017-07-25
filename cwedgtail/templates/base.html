@@ -36,12 +36,7 @@
 
     <body class="{% block body_class %}{% endblock %}">
      <header id="top">
-     <div class="row">
-         <div class="header-content twelve columns">
-             <h1 id="logo-text"><a href="/" title="">{% if page.title == 'Home' %}Chris Wedgwood{% else %}{{ page.title }}{% endif %}</a></h1>
-             {% if page.title == 'Home' %}<p id="intro">Technology Professional</p>{% endif %}
-         </div>
-     </div>
+
         {% wagtailuserbar %}
         {% block menu %}
         {% get_site_root as site_root %}

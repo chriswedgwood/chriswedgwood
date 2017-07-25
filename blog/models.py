@@ -65,6 +65,15 @@ class BlogPage(Page):
         InlinePanel('gallery_images', label="Gallery images"),
     ]
 
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super(BlogPage, self).get_context(request)
+
+        category_counts = BlogCategory.objects.values('name').annotate(category_cnt=models.Count("blogpage"))
+        context['category_counts'] = category_counts
+
+        return context
+
 class BlogPageGalleryImage(Orderable):
     page = ParentalKey(BlogPage, related_name='gallery_images')
     image = models.ForeignKey(

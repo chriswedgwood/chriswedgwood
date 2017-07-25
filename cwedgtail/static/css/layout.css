@@ -45,12 +45,12 @@ body {
 
 header { 
    width: 100%;   
-   height: 288px;  
+   height: 50px;
    background: #fff;    
 }
 header .header-content {
 	background: #fff ;
-	height: 288px;
+	height: 50px;
 	border-bottom: 1px  solid #E8E8E8;
 	position: relative;	
 }

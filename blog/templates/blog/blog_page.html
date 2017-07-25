@@ -5,35 +5,41 @@
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
+    <div id="content-wrap">
 
-{% with categories=page.categories.all %}
-    {% if categories %}
-        <h3>Posted in:</h3>
-        <ul>
-            {% for category in categories %}
-                <li style="display: inline">
-                    {% image category.icon fill-32x32 style="vertical-align: middle" %}
-                    {{ category.name }}
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+   	<div class="row">
 
-    <div class="intro">{{ page.intro }}</div>
+   		<div id="main" class="eight columns">
 
-    {{ page.body|richtext }}
+   			<article class="entry">
 
-    {% for item in page.gallery_images.all %}
-        <div style="float: left; margin: 10px">
-            {% image item.image fill-320x240 %}
-            <p>{{ item.caption }}</p>
-        </div>
-    {% endfor %}
+					<header class="entry-header">
 
-    {% if page.tags.all.count %}
+						<h2 class="entry-title">
+							{{ page.title }}
+						</h2>
+
+						<div class="entry-meta">
+							<ul>
+								<li>{{ post.date }}</li>
+
+                                {% for category in page.categories.all %}
+                             <span class="meta-sep">•</span>
+								<li><a href="#" title="" rel="category tag">{{ category.name }}</a></li>
+
+                            {% endfor %}
+							</ul>
+						</div>
+
+					</header>
+
+
+
+					<div class="entry-content">
+					{{ page.body| richtext }}
+                    </div>
+
+					 {% if page.tags.all.count %}
     <div class="tags">
         <h3>Tags</h3>
         {% for tag in page.tags.all %}
@@ -41,7 +47,58 @@
         {% endfor %}
     </div>
 {% endif %}
+<p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
 
-    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+
+				</article>
+
+
+
+
+   		</div> <!-- main End -->
+
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3>
+                  <form action="#">
+
+                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search">
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Categories</h3>
+   				<ul>{% for category in category_counts %}
+						<li><a href="#" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
+
+				{% endfor %}
+						</ul>
+
+				</div>
+
+
+
+
+
+   		</div> <!-- end sidebar -->
+
+  		</div> <!-- end row -->
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
