@@ -1,0 +1,9 @@
+<!-- This is in my template -->
+<!-- flexi_fields/sections/code_section.html -->
+{% load wagtailcore_tags %}
+<section>
+{# do not indent the "{{ self.text.}}" code below, or else 'prism' will add that indentation to the first line outputted :-) #}
+    <pre><code class="language-{{ self.language }}">
+{{ self.text }}
+    </code></pre>
+</section>
