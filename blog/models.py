@@ -23,8 +23,12 @@ class BlogIndexPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super(BlogIndexPage, self).get_context(request)
-        blogpages = self.get_children().live().order_by('-last_published_at')[:3]
+        blogpages = BlogPage.objects.filter()
         context['blogpages'] = blogpages
+        category_counts = BlogCategory.objects.values('name').annotate(category_cnt=models.Count("blogpage"))
+        context['category_counts'] = category_counts
+        for post in blogpages:
+            print(post.title)
         return context
 
 

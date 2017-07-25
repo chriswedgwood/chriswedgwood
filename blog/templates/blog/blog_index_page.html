@@ -5,21 +5,94 @@
 {% block body_class %}template-blogindexpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
 
-    <div class="intro">{{ page.intro|richtext }}</div>
+<div id="content-wrap">
 
-   {% for post in blogpages %}
-    {% with post=post.specific %}
-        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+   	<div class="row">
 
-        {% with post.main_image as main_image %}
-            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-        {% endwith %}
+   		<div id="main" class="eight columns">
+             {% for post in blogpages %}
 
-        <p>{{ post.intro }}</p>
-        {{ post.body|richtext }}
-    {% endwith %}
-{% endfor %}
+	   		<article class="entry">
+
+					<header class="entry-header">
+
+
+						<h2 class="entry-title">
+							<a href="{% pageurl post %}">{{ post.title }}</a>
+						</h2>
+
+						<div class="entry-meta">
+							<ul>
+								<li>{{ post.date }}</li>
+
+                                {% for category in post.categories.all %}
+                             <span class="meta-sep">•</span>
+								<li><a href="#" title="" rel="category tag">{{ category.name }}</a></li>
+
+                            {% endfor %}
+
+
+							</ul>
+						</div>
+
+					</header>
+
+					<div class="entry-content">
+						<p>{{ post.intro }}</p>
+					</div>
+
+				</article> <!-- end entry -->
+            {% endfor %}
+
+
+
+   		</div> <!-- end main -->
+
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3>
+                  <form action="#">
+
+                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search">
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Categories</h3>
+   				<ul>{% for category in category_counts %}
+						<li><a href="#" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
+
+				{% endfor %}
+						</ul>
+
+				</div>
+
+   			<div class="widget widget_tags">
+               <h3>Post Tags.</h3>
+
+               <div class="tagcloud group">
+                	<a href="#">Corporate</a>
+                  <a href="#">Onepage</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Multipurpose</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Landing Page</a>
+                  <a href="#">Resume</a>
+               </div>
+
+            </div>
+
+
+
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+</div>
+
 
 {% endblock %}

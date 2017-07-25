@@ -22,7 +22,7 @@
 
 body { 
 	background: #F6F5F5;
-	border-top: 6px solid #9FCC7F; 
+	border-top: 6px solid #447294;
 }
 .page { 
 	padding-bottom: 18px;
@@ -49,9 +49,9 @@ header {
    background: #fff;    
 }
 header .header-content {
-	background: #fff url(../images/header-content-bg.png) no-repeat right top;
+	background: #fff ;
 	height: 288px;
-	border-bottom: 1px dashed #E8E8E8;
+	border-bottom: 1px  solid #E8E8E8;
 	position: relative;	
 }
 /* For high-res devices */
@@ -60,7 +60,7 @@ header .header-content {
 (min-resolution: 192dpi) {
 
 	header .header-content {
-		background: #fff url(../images/header-content-bg_@2X.png) no-repeat right top;
+		background: #fff ;
 		background-size: 361px 256px;
 	}
 
@@ -80,7 +80,7 @@ header h1#logo-text a {
 	padding: 0;
 	font: normal 75px Georgia, Serif;
 	letter-spacing: -5px;
-	color: #93b876;
+	color: #447294;
 	text-decoration: none;
 }
 header p#intro {	
@@ -250,6 +250,7 @@ ul#nav ul li a {
 #content-wrap {
 	background: #fff;
 	padding: 42px 0 36px 0;
+
 }
 #content-wrap #main { padding-right: 40px; }
 
@@ -335,7 +336,7 @@ ul#nav ul li a {
 	border-top: 1px dotted #E6E6E6;
 }
 #sidebar .link-list li a {	color: #4A5153; }
-#sidebar .link-list li a:hover {	color: #313131; /* color: #93B876; */ }
+#sidebar .link-list li a:hover {	color: #313131; /* color: #447294; */ }
 
 
 /* tag cloud */
@@ -369,7 +370,7 @@ ul#nav ul li a {
 }
 #sidebar .tagcloud a:hover {
    color: #fff;
-   background: #93B876;
+   background: #447294;
 }
 
 
@@ -423,7 +424,7 @@ ul#nav ul li a {
 .post-nav li strong {
    font: 16px/30px 'opensans-bold', sans-serif;
    text-transform: uppercase;
-   color: #93B876;
+   color: #447294;
    letter-spacing: 0.5px;
    display: block;
 }
@@ -538,7 +539,7 @@ ol.commentlist {
    margin-top: 12px;
 }
 #comments form span.required {
-	color: #93B876;
+	color: #447294;
 	font-size: 15px;
 }
 

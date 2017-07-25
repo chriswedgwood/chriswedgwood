@@ -38,8 +38,8 @@
      <header id="top">
      <div class="row">
          <div class="header-content twelve columns">
-             <h1 id="logo-text"><a href="/" title="">Keep It Simple.</a></h1>
-             <p id="intro">Put your awesome slogan here...</p>
+             <h1 id="logo-text"><a href="/" title="">{% if page.title == 'Home' %}Chris Wedgwood{% else %}{{ page.title }}{% endif %}</a></h1>
+             {% if page.title == 'Home' %}<p id="intro">Technology Professional</p>{% endif %}
          </div>
      </div>
         {% wagtailuserbar %}

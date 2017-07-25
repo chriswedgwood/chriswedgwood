@@ -289,8 +289,8 @@ hr { border: solid #E8E8E8; border-width: 1px 0 0; clear: both; margin: 11px 0 3
 a, a:visited {
    text-decoration: none;
    outline: 0;
-   color: #93B876;
-   
+   color: #447294;
+
    -webkit-transition: color .3s ease-in-out;
    -moz-transition: color .3s ease-in-out;
    -o-transition: color .3s ease-in-out;
@@ -351,7 +351,7 @@ ol ol li, ol ul li { }
    color: #444;
 }
 .stats-tabs li a:hover {
-   color: #93B876;
+   color: #447294;
 }
 .stats-tabs li a em {
 	display: block;
@@ -363,7 +363,7 @@ ol ol li, ol ul li { }
 
 /* definition list */
 dl { margin: 12px 0; }
-dt { margin: 0; color: #93B876; }
+dt { margin: 0; color: #447294; }
 dd { margin: 0 0 0 20px; }
 
 /* Lining Definition Style Markup */
@@ -435,7 +435,7 @@ dd { margin: 0 0 0 20px; }
 }
 .pagination .current,
 .pagination .current:hover {
-   background-color: #93B876;
+   background-color: #447294;
    color: #fff;
 }
 .pagination .inactive,

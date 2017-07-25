@@ -5,5 +5,52 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    {{ page.body|richtext }}
+
+    <div id="content-wrap">
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+
+	   		{{ page.body|richtext }}
+
+
+
+
+
+
+   		</div> <!-- end main -->
+
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3>
+                  <form action="#">
+
+                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search">
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Categories</h3>
+   				<ul>{% for category in category_counts %}
+						<li><a href="#" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
+
+				{% endfor %}
+						</ul>
+
+				</div>
+
+
+
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+   </div>
 {% endblock %}
+
+
+
