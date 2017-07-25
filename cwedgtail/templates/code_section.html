@@ -1,9 +1,13 @@
 <!-- This is in my template -->
 <!-- flexi_fields/sections/code_section.html -->
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags %}
 <section>
 {# do not indent the "{{ self.text.}}" code below, or else 'prism' will add that indentation to the first line outputted :-) #}
-    <pre><code class="language-{{ self.language }}">
+    <pre data-src="{% static 'js/prism-copy-to-clipboard.js' %}">
+        <code class="language-{{ self.language }} code-toolbar">
 {{ self.text }}
-    </code></pre>
+    </code>
+    <div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div>
+
+    </pre>
 </section>

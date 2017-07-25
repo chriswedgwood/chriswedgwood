@@ -4,7 +4,9 @@ CODE_CHOICES = [
     ('python', 'python'),
     ('javascript', 'javascript'),
     ('css', 'css'),
-    ('markup', 'markup')
+    ('markup', 'markup'),
+    ('SQL', 'SQL')
+
 ]
 
 
