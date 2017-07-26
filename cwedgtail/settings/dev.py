@@ -11,8 +11,11 @@ SECRET_KEY = 'ml)yq3y8+q!29&nkvstiin#wfw99#3p$t^3%tz72#49z&mhdp('
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+GA_TRACKING_ID = ''
 
 try:
     from .local import *
 except ImportError:
     pass
+
+

@@ -8,3 +8,6 @@ try:
     from .local import *
 except ImportError:
     pass
+
+
+GA_TRACKING_ID = 'UA-103263668-1'

@@ -51,10 +51,9 @@
         <script src="{% static 'js/prism.js' %}"></script>
 
        
-        <script type="text/javascript">
-
-        </script>
-
+        {% block ga %}
+            {% include "snippets/ga.html" with ga_tracking_id=ga_tracking_id %}
+        {% endblock ga %}
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
