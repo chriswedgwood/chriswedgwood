@@ -1,0 +1,10 @@
+ {% load wagtailcore_tags wagtailimages_tags %}
+ <div class="widget widget_categories group">
+   				<h3>Categories</h3>
+   				<ul>{% for category in category_counts %}
+						<li><a href="{{ page.url }}?category={{ category.name }}" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
+
+				{% endfor %}
+						</ul>
+
+				</div>

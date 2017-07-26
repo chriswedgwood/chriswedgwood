@@ -45,7 +45,21 @@
 				</article> <!-- end entry -->
             {% endfor %}
 
+<div class="pagination">
+    <span class="step-links">
+        {% if blogpages.has_previous %}
+            <a href="?page={{ blogpages.previous_page_number }}">previous&nbsp;</a>
+        {% endif %}
 
+        <span class="current">
+            Page {{ blogpages.number }} of {{ blogpages.paginator.num_pages }}
+        </span>
+
+        {% if blogpages.has_next %}
+            <a href="?page={{ blogpages.next_page_number }}">&nbsp;next</a>
+        {% endif %}
+    </span>
+</div>
 
    		</div> <!-- end main -->
 
@@ -61,15 +75,7 @@
                   </form>
                </div>
 
-   			<div class="widget widget_categories group">
-   				<h3>Categories</h3>
-   				<ul>{% for category in category_counts %}
-						<li><a href="#" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
-
-				{% endfor %}
-						</ul>
-
-				</div>
+            {% include 'blog/blog_category_counts.html' %}
 
 
 

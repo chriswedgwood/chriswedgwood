@@ -69,15 +69,7 @@
                   </form>
                </div>
 
-   			<div class="widget widget_categories group">
-   				<h3>Categories</h3>
-   				<ul>{% for category in category_counts %}
-						<li><a href="#" title="">{{ category.name }}</a> ({{ category.category_cnt }})</li>
-
-				{% endfor %}
-						</ul>
-
-				</div>
+   			{% include 'blog/blog_category_counts.html' %}
 
 
 

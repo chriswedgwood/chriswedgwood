@@ -13,6 +13,7 @@ from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from.blocks import CodeBlock
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 register = template.Library()
@@ -25,14 +26,29 @@ class BlogIndexPage(Page):
     ]
 
     def get_context(self, request):
+
         # Update context to include only published posts, ordered by reverse-chron
         context = super(BlogIndexPage, self).get_context(request)
-        blogpages = BlogPage.objects.filter()
+        if "category" in request.GET:
+            category = request.GET['category']
+            blogpages_list = BlogPage.objects.filter(categories__name__iexact=category)
+        else:
+            blogpages_list = BlogPage.objects.filter()
+
+        paginator = Paginator(blogpages_list, 2)  # Show 25 contacts per page
+        page = request.GET.get('page')
+        try:
+            blogpages = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            blogpages = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            blogpages = paginator.page(paginator.num_pages)
         context['blogpages'] = blogpages
         category_counts = BlogCategory.objects.values('name').annotate(category_cnt=models.Count("blogpage"))
         context['category_counts'] = category_counts
-        for post in blogpages:
-            print(post.title)
+
         return context
 
 
