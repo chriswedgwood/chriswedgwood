@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'cwedgtail.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///pcndodger'),
+    'default': env.db('DATABASE_URL', default='postgres:///cwedgtail'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
