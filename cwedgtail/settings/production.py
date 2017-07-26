@@ -16,3 +16,5 @@ GA_TRACKING_ID = 'UA-103263668-1'
 
 
 DATABASES['default'] = env.db('DATABASE_URL')
+
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.com', ])
