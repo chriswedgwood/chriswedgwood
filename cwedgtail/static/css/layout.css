@@ -43,6 +43,40 @@ body {
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
 
+
+#home-logo h1{
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+#home-logo h1 a{
+
+    margin: 0;
+	padding: 0;
+	font: normal 70px Georgia, Serif;
+	letter-spacing: -3px;
+	color: #447294;
+	text-decoration: none;
+}
+
+
+#home-logo p {
+	margin: 0;
+	padding: 0;
+	font: 16px/24px 'opensans-light', Georgia, Serif;
+	font-weight: normal;
+	color: #C8C8C8;
+	width: 400px;
+
+	/* change the values of top and left to adjust the position */
+	position: relative;
+	top: 0px; left: 6px;
+}
+
+
 header { 
    width: 100%;   
    height: 50px;
@@ -67,7 +101,7 @@ header .header-content {
 }
 
 /* header logo */
-header h1#logo-text { 
+header h1#logo-text {
 	margin: 0; 
 	padding: 0; 
 
@@ -75,7 +109,7 @@ header h1#logo-text {
 	position: absolute;
 	top: 108px; left: 18px;	
 }
-header h1#logo-text a {	 
+header h1#logo-text a {
 	margin: 0; 
 	padding: 0;
 	font: normal 75px Georgia, Serif;
@@ -83,7 +117,7 @@ header h1#logo-text a {
 	color: #447294;
 	text-decoration: none;
 }
-header p#intro {	
+header p#intro {
 	margin: 0; 
 	padding: 0;
 	font: 16px/24px 'opensans-light', Georgia, Serif;
