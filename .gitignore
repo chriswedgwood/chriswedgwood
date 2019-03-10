@@ -61,7 +61,7 @@ node_modules/
 # User-uploaded media
 pcndodger/media/
 
-
+venv/
 
 staticfiles/
 
