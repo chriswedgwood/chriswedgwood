@@ -20,6 +20,7 @@ import environ
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
 
@@ -78,7 +79,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_DIR, '../../cwedgtail/templates'),
+            os.path.join(BASE_DIR, 'cwedgtail/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,11 +126,14 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+print('XXXXXXXXX')
+print(PROJECT_DIR)
+print(BASE_DIR)
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(BASE_DIR, 'cwedgtail/static'),
 ]
-
+print('XXXXXXXXX')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
