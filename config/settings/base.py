@@ -94,14 +94,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'cwedgtail.wsgi.application'
+
 
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///cwedgtail'),
+    'default': env.db('DATABASE_URL', default='postgres:///chriswedgwood'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
