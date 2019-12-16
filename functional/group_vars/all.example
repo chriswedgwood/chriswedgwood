@@ -27,7 +27,7 @@ venv_dir: '/home/{{ deployer_user }}/envs/{{ app_name }}'
 venv_python: '{{ venv_dir }}/bin/python3.6'
 
 # Remote Server Details
-server_ip: 165.22.122.187
+server_ip: {{server ip}}
 wsgi_server_port: 80
 
 # Deploy Dir in App Directory
