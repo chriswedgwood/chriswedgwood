@@ -126,13 +126,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-print('XXXXXXXXX')
-print(PROJECT_DIR)
-print(BASE_DIR)
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'cwedgtail/static'),
+]
 
-print('XXXXXXXXX')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'collect_static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
