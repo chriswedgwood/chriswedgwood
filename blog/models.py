@@ -4,14 +4,14 @@ from django import template
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
-from wagtail.wagtailcore.models import Page, Orderable
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel,StreamFieldPanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailsearch import index
-from wagtail.wagtailsnippets.models import register_snippet
-from wagtail.wagtailimages.blocks import ImageChooserBlock
+from wagtail.core.models import Page, Orderable
+from wagtail.core import blocks
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel,StreamFieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
+from wagtail.snippets.models import register_snippet
+from wagtail.images.blocks import ImageChooserBlock
 from.blocks import CodeBlock
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -146,7 +146,7 @@ class BlogCategory(models.Model):
         verbose_name_plural = 'blog categories'
 
 
-@register.assignment_tag(takes_context=True)
+@register.simple_tag(takes_context=True)
 def get_site_root(context):
     # NB this returns a core.Page, not the implementation-specific model used
     # so object-comparison to self will return false as objects would differ
