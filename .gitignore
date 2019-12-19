@@ -169,6 +169,7 @@ GitHub.sublime-settings
 .AppleDouble
 .LSOverride
 
+
 # Icon must end with two \r
 Icon
 
@@ -232,4 +233,15 @@ pip-selfcheck.json
 gg/
 pip.ini
 
+
 collect_static/
+
+db.sqllite3
+
+.vagrant/*
+production/group_vars/*
+local/group_vars/*
+static/*
+
+env.j2
+
