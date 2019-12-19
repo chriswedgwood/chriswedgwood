@@ -1,4 +1,11 @@
 -r base.txt
 
 gunicorn==19.9.0
+
+
+# Storage
+git+https://github.com/chriswedgwood/django-storages.git
+boto3==1.9.215
+
 celery==4.3.0
+
