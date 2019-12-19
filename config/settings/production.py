@@ -24,7 +24,7 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.com', ])
 DO_SPACES_ACCESS_KEY_ID = env('DJANGO_DO_ACCESS_KEY_ID')
 DO_SPACES_SECRET_ACCESS_KEY = env('DJANGO_DO_SECRET_ACCESS_KEY')
 DO_SPACES_SPACE_NAME = env('DJANGO_DO_STORAGE_BUCKET_NAME') 
-DO_SPACES_SPACE_FOLDER = 'mysite' # recommended: Your project name, e.g: 'blog' 
+DO_SPACES_SPACE_FOLDER = 'chriswedgwood' # recommended: Your project name, e.g: 'blog' 
 DO_SPACES_ENDPOINT_URL = 'https://fra1.digitaloceanspaces.com' # must be your Space endpoint url, e.g: 'https://sfo2.digitaloceanspaces.com' 
 DO_SPACES_CACHE_MAX_AGE = 86400 
 DO_SPACES_DEFAULT_ACL = None#'public-read'
