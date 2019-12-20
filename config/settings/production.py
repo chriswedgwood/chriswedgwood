@@ -30,16 +30,16 @@ DO_SPACES_CACHE_MAX_AGE = 86400
 DO_SPACES_DEFAULT_ACL = None#'public-read'
 
 # Set File locations  
-DO_SPACES_STATIC_LOCATION = 'chriswedgwood/static' 
+#DO_SPACES_STATIC_LOCATION = 'chriswedgwood/static' 
 DO_SPACES_MEDIA_LOCATION = 'chriswedgwood/media'
 DO_SPACES_PUBLIC_MEDIA_LOCATION = '{FOLDER}/media/public'.format(FOLDER=DO_SPACES_SPACE_FOLDER) 
 DO_SPACES_PRIVATE_MEDIA_LOCATION = '{FOLDER}/media/private'.format(FOLDER=DO_SPACES_SPACE_FOLDER)
 
 # Static files config 
-STATIC_URL = 'https://{ENDPOINT_URL}/{STATIC_LOCATION}/'.format(ENDPOINT_URL=DO_SPACES_ENDPOINT_URL, STATIC_LOCATION=DO_SPACES_STATIC_LOCATION)
+#STATIC_URL = 'https://{ENDPOINT_URL}/{STATIC_LOCATION}/'.format(ENDPOINT_URL=DO_SPACES_ENDPOINT_URL, STATIC_LOCATION=DO_SPACES_STATIC_LOCATION)
 
 # Configure file storage settings 
-STATICFILES_STORAGE = 'storages.backends.do_spaces.DigitalOceanSpacesStaticStorage' 
+#STATICFILES_STORAGE = 'storages.backends.do_spaces.DigitalOceanSpacesStaticStorage' 
 DEFAULT_FILE_STORAGE = 'storages.backends.do_spaces.DigitalOceanSpacesPublicMediaStorage' 
 PRIVATE_FILE_STORAGE = 'storages.backends.do_spaces.DigitalOceanSpacesPrivateMediaStorage'
 
