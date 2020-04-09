@@ -239,7 +239,7 @@ collect_static/
 db.sqllite3
 
 .vagrant/*
-production/group_vars/*
+production/*
 local/group_vars/*
 static/*
 

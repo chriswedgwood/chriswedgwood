@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'blog',
+    'toastmasters',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',

@@ -1,3 +1,11 @@
-from django.contrib import admin
+from toastmasters.models import *
 
-# Register your models here.
+admin.site.register(Club)
+admin.site.register(Member)
+admin.site.register(Role)
+admin.site.register(Meeting)
+admin.site.register(Pathway)
+admin.site.register(PathwayLevel)
+admin.site.register(PathwaySpeech)
+admin.site.register(MemberSpeech)
+admin.site.register(MemberRole)
