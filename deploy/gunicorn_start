@@ -1,0 +1,57 @@
+#!/bin/bash
+
+### Define script variables
+
+# Name of the app
+NAME='chriswedgwood'
+# Path to virtualenv
+VIRTUALENV='/home/vagrant/envs/chriswedgwood'
+# Django Project Directory
+DJANGODIR='/home/vagrant/chriswedgwood'
+# The user to run as
+USER=vagrant
+# The group to run as
+GROUP=vagrant
+# Number of worker processes Gunicorn should spawn
+NUM_WORKERS=3
+# Settings file that Gunicorn should use
+DJANGO_SETTINGS_MODULE=config.settings.production
+# WSGI module name
+DJANGO_WSGI_MODULE=config.wsgi
+
+
+### Activate virtualenv and create environment variables
+
+echo "Starting $NAME as `whoami`"
+# Activate the virtual environment
+cd $VIRTUALENV
+source bin/activate
+cd $DJANGODIR
+# Defining the Environment Variables
+export DJANGO_SECRET_KEY='?V[a&Ov?QaqiB*pQ_H@,#]Lygm!}5O1$N}_0>nm8f%4X_'
+export DATABASE_URL='postgresql://vagrant:Tw@ngers18@localhost/chriswedgwood'
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+export BIND='unix:/var/gsock/gunicorn.sock'
+
+
+### Start Gunicorn
+source /home/vagrant/chriswedgwood/.env
+
+echo "Starting $NAME as `whoami`" >>  /home/vagrant/chriswedgwood/lezza.txt
+echo "exec gunicorn ${DJANGO_WSGI_MODULE}:application \
+        --name $NAME \
+        --workers $NUM_WORKERS \
+        --user=$USER --group=$GROUP \
+        --log-level=debug \
+        --bind=$BIND
+" >>  /home/vagrant/chriswedgwood/lezza.txt
+
+
+exec gunicorn ${DJANGO_WSGI_MODULE}:application \
+        --name $NAME \
+        --workers $NUM_WORKERS \
+        --user=$USER --group=$GROUP \
+        --log-level=debug \
+        --bind=$BIND
+        

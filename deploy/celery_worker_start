@@ -1,0 +1,40 @@
+#!/bin/bash
+
+### Define script variables
+echo "WTF"
+echo `whoami`
+# Name of the app
+NAME='chriswedgwood'
+# Path to virtualenv
+VIRTUALENV='/home/vagrant/envs/chriswedgwood'
+# Django Project Directory
+DJANGODIR='/home/vagrant/chriswedgwood'
+# The user to run as
+USER=vagrant
+# The group to run as
+GROUP=vagrant
+# Number of worker processes Gunicorn should spawn
+NUM_WORKERS=3
+# Settings file that Gunicorn should use
+DJANGO_SETTINGS_MODULE=config.settings.production
+# WSGI module name
+DJANGO_WSGI_MODULE=config.wsgi
+
+
+cd $DJANGODIR
+
+source /home/vagrant/chriswedgwood/.env
+
+echo "THIS IS MY CELRY NODE  : ${CELERYD_NODES}"
+echo "THIS IS MY CELRY LOG  : ${CELERYD_LOG_FILE}"
+echo "THIS IS MY PID FILE   : ${CELERYD_PID_FILE}"
+echo "THIS IS MY "
+#mkdir -p /var/run/celery
+
+echo "${CELERY_BIN} multi start ${CELERYD_NODES} "
+echo "-A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE}" 
+echo "  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}"
+
+${CELERY_BIN} multi start ${CELERYD_NODES} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}

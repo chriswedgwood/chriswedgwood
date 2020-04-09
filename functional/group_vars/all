@@ -1,0 +1,58 @@
+# App Name
+app_name: chriswedgwood
+
+# Deployer User and Groups
+deployer_user: vagrant
+deployer_group: vagrant
+
+
+# SSH Keys Directory
+ssh_dir: '~/.ssh'
+
+# DB Configuration
+db_url: postgresql://{{deployer_user}}:{{db_password}}@localhost/{{app_name}}
+#db_url: postgresql://doadmin:ma2su03chr79ry2h@db-postgresql-lon1-98623-do-user-3192717-0.db.ondigitalocean.com:25060/pcndoder?sslmode=require
+login_password: ma2su03chr79ry2h
+#login_host: db-postgresql-lon1-98623-do-user-3192717-0.db.ondigitalocean.com
+#login_user: doadmin
+#port: 25060
+
+db_password: Tw@ngers18
+db_name: "{{ app_name }}"
+db_user: "{{ deployer_user }}"
+
+# Application Dependencies Setup
+
+venv_dir: '/home/{{ deployer_user }}/envs/{{ app_name }}'
+venv_python: '{{ venv_dir }}/bin/python3.6'
+
+# Remote Server Details
+server_ip: 165.22.122.187
+wsgi_server_port: 80
+
+# Deploy Dir in App Directory
+deploy_dir: '{{ app_dir }}/deploy'
+
+# WSGI Vars
+django_wsgi_module: config.wsgi
+django_settings_module: config.settings.production
+django_secret_key: '?V[a&Ov?QaqiB*pQ_H@,#]Lygm!}5O1$N}_0>nm8f%4X_'
+database_url: '{{ db_url }}'
+
+
+# Github Code's Repo URL
+code_repository_url: git@github.com:chriswedgwood/chriswedgwood.git
+
+# App Directory
+app_dir: /home/{{ deployer_user }}/{{app_name}}
+
+
+
+devops_password: 'abcddefsfdfdfdfdfdfdfdfdfdfd'
+gather_facts: no
+remote_user: ubuntu
+  
+ansible_python_interpreter: /usr/bin/python3
+
+executable_dir: '/home/{{ deployer_user }}/executables'
+

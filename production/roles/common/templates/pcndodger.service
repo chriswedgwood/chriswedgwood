@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[Unit]
+Description=chriswedgwood
+After=network.target
+
+[Service]
+PIDFile=/var/run/chriswedgwood.pid
+User={{ deployer_user }}
+Group={{ deployer_group }}
+ExecStart=/bin/bash {{ executable_dir }}/gunicorn_start
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
+
