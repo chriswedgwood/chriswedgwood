@@ -1,14 +1,5 @@
-# -*- coding: utf-8 -*-
-
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
-import scrapy
-
-
-class EasyscrapeItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+from scrapy_djangoitem import DjangoItem
+from blog.models import BlogPage
+from toastmasters.models import Member
+class MemberItem(DjangoItem):
+    django_model = Member

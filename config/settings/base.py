@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'search',
     'blog',
     'toastmasters',
+    'easyscrape',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
