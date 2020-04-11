@@ -1,4 +1,5 @@
 from toastmasters.models import *
+from django.contrib import admin
 
 admin.site.register(Club)
 admin.site.register(Member)
