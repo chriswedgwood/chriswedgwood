@@ -11,12 +11,13 @@ class Club(models.Model):
 
 
 class Member(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    full_name = models.CharField(max_length=30)
     club = models.ManyToManyField(to=Club)
+    join_date = models.DateField()
+    es_id = models.IntegerField()
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.full_name} '
 
 
 class Role(models.Model):
@@ -27,42 +28,43 @@ class Role(models.Model):
 
 
 class Meeting(models.Model):
-    title = models.CharField(max_length=30)
-    date = models.DateField()
-    time = models.TimeField()
+    
+    date = models.DateField(unique=True)
+   
 
     def __str__(self):
-        return self.title
+        return str(self.date)
 
 
 class Pathway(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.title
 
 
 class PathwayLevel(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=1000)
     pathway = models.ForeignKey(to=Pathway,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.title + ' ' + str(self.pathway)
 
 
 class PathwaySpeech(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=1000)
     level = models.ForeignKey(to=PathwayLevel,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return str(self.level)
 
 
 
 class MemberSpeech(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=500)
     meeting = models.ForeignKey(to=Meeting,on_delete=models.CASCADE)
     pathway_speech = models.ForeignKey(to=PathwaySpeech,on_delete=models.CASCADE)
+    member = models.ForeignKey(to=Member,on_delete=models.CASCADE)
     
     
     def __str__(self):

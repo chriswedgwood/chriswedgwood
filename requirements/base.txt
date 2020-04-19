@@ -3,3 +3,7 @@ wagtail>=2.7,<2.8
 django-environ==0.4.3
 django-extensions==1.8.1
 psycopg2-binary==2.7.7
+jupyter==1.0.0
+Scrapy==2.0.1
+pandas==1.0.3
+scrapy-djangoitem==1.1.0

@@ -13,9 +13,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 GA_TRACKING_ID = ''
 
-try:
-    from .local import *
-except ImportError:
-    pass
+
 
 

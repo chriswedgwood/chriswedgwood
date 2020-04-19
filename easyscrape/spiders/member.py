@@ -4,6 +4,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import re
 import csv
+from datetime import datetime
+
 
 
 from easyscrape.items import MemberItem
@@ -22,6 +24,12 @@ class MemberSpider(scrapy.Spider):
     name = 'member'
     start_urls = ['https://toastmasterclub.org/login.php']
     member_ids = []
+
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'easyscrape.pipelines.MemberPipeline': 300,
+        }
+    }
 
     def parse(self, response):
         return scrapy.FormRequest.from_response(
@@ -52,28 +60,39 @@ class MemberSpider(scrapy.Spider):
      
         for tr in table_rows:
             
-            
-            
             td = tr.find_all('td')
             row = [i.text.strip('\n') for i in td]
             print(row)
-            if len(td) >3:
+            #if len(td) >3:
+            if len(row) == 7:
+                user_id = td[0].span.a['href'][-5:]
+                row.append(user_id)
+                users.append(row)    
                 
-                user_id= td[0].span.a['href'][-5:]
-                name = td[0].text.strip()
-                joined = td[4].text.strip() 
-                if [user_id,name,joined] not in users:
-                    users.append([user_id,name,joined])
+            #    name = td[0].text.strip()
+            #    joined = td[4].text.strip() 
+            #    if [user_id,name,joined] not in users:
+            #        users.append([user_id,name,joined])
             
         
-       
+        
 
         for row in users:
             with open('tm_members.csv', 'a', newline='\n', encoding='utf-8') as f:
-                        writer = csv.writer(f)
-                        writer.writerow(row)
+                writer = csv.writer(f)
+                writer.writerow(row)    
             
-        
+            join_date = datetime.strptime(row[4], '%d %b %y').date()
+
+            member_data = {'full_name':row[0],'join_date':join_date,'es_id':row[7]}
+            item = MemberItem(member_data)
+            print('yuyuyu')
+
             
+            yield item
+
+           
+            
+    
 
     

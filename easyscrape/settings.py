@@ -89,4 +89,6 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-ITEM_PIPELINES = {"easyscrape.pipelines.MemberPipeline": 300}
+ITEM_PIPELINES = {#"easyscrape.pipelines.MemberPipeline": 300,
+                    "easyscrape.pipelines.RolePipeline": 200
+                    }
