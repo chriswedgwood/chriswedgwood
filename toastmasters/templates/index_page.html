@@ -1,0 +1,15 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/5.10.1/vega.min.js" integrity="sha256-ZqGFiaSyCcPLujHfDd/p3ASKvlriNDgB29PtHBBLS7A=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/4.11.0/vega-lite.min.js" integrity="sha256-KtexDRgd025KX4aekAz4SUklk/O5LScwLEmweDxCUdo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/6.6.0/vega-embed.min.js" integrity="sha256-hevN6wU91iR1jYmp6F/imSGZM44Zh6ltuB4wfk8pNZM=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="viz">
+</div>
+<script type="text/javascript">
+var spec = "{% url 'toastie-member-data' %}"
+vegaEmbed('#viz', spec)
+</script>
+</body>
+</html>
