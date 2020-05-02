@@ -69,7 +69,8 @@ class SpeechSpider(scrapy.Spider):
         print(f'USER_IDS:{user_ids}')
 
         for id in user_ids:
-            #id = 20474
+            #id = 54991
+            #id = 49407
             url = f'https://toastmasterclub.org/profile_cc.php?u={id}'
             yield Request(url=url,callback=self.get_user_info,meta={'id':id})
             
@@ -80,11 +81,22 @@ class SpeechSpider(scrapy.Spider):
         pathways = []
         id = response.meta.get('id')
         print(f'id:{id}')
+        
         self.member_ids.append(id)
         data = response.text
         soup = BeautifulSoup(data, features="lxml")
         workbook_history_table = soup.find(string="Workbook History").find_parent("table")
         workbooks_span = workbook_history_table.findAll("span", {"class": "smalltitle"}) 
+
+
+        
+            
+        for span in workbooks_span:
+           pathway = span.text.strip().replace('(Pathway) ','')
+           print(pathway)
+
+
+
         for index,tr in enumerate(workbook_history_table.find_all('tr', recursive=False)):
             td = tr.find_all('td')
             pathway = tr.find('span',{"class": "smalltitle"}) or None
@@ -95,6 +107,7 @@ class SpeechSpider(scrapy.Spider):
                 pathways.append(pathway_text)
             if speech_span:
                 title = tr.find('a',{"class":"gen"})
+                print(title)
                 
                 if speech_span.text:
                     assignment = speech_span.text.strip().replace('(Pathway) ','')
@@ -115,7 +128,7 @@ class SpeechSpider(scrapy.Spider):
                         completed_date  = datetime.strptime(completed_date, '%d %b %y').date()
                         level = assignment[:7]
                         if level[:5]!='Level':
-                            level = 'Level 1'
+                            level = 'Level 0'
                         assignment = assignment[8:]
                         speech_data = {'pathway':pathways[-1],'level':level,'assignment':assignment,'speech_title':title.text,'completed_date':completed_date,'es_id':id}
                         yield speech_data
