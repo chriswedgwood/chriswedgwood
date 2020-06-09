@@ -16,7 +16,6 @@ class RolePipeline(object):
           member = Member.objects.get(es_id=item['es_id'])
           role,_ = MemberRole.objects.get_or_create(member=member,role=role,meeting=meeting)
           return role
-Washington Gwenzi
 class SpeechPipeline(object):
       def process_item(self, item, spider):
           pathway = item['pathway']
@@ -37,3 +36,13 @@ class SpeechPipeline(object):
           
           
           return member_speech
+
+
+class MeetingPipeline(object):
+      def process_item(self, item, spider):
+          print('bnbnbnbn')
+        #   role, _ = Role.objects.get_or_create(title=item['role'])
+        #   meeting, _ = Meeting.objects.get_or_create(date=item['role_date'])
+        #   member = Member.objects.get(es_id=item['es_id'])
+        #   role,_ = MemberRole.objects.get_or_create(member=member,role=role,meeting=meeting)
+        #   return role
