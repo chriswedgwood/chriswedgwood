@@ -81,7 +81,12 @@ class MemberRole(models.Model):
         return str(self.member)
 
 
+class Attendance(models.Model):
+    member = models.ForeignKey(to=Member,on_delete=models.CASCADE)
+    meeting = models.ForeignKey(to=Meeting,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(self.member)+'_'+ str(self.meeting)
 
 
 

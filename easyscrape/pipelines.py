@@ -41,6 +41,7 @@ class SpeechPipeline(object):
 class MeetingPipeline(object):
       def process_item(self, item, spider):
           print('bnbnbnbn')
+          
         #   role, _ = Role.objects.get_or_create(title=item['role'])
         #   meeting, _ = Meeting.objects.get_or_create(date=item['role_date'])
         #   member = Member.objects.get(es_id=item['es_id'])
