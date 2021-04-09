@@ -12,7 +12,7 @@ except ImportError:
 
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['aa-london.com','www.aa-london.com','alcoholicsanonymouslondon.com','www.alcoholicsanonymouslondon.com',] 
+ALLOWED_HOSTS = ['chriswedgwood.com','www.chriswedgwood.com',] 
 
 ############################################
 AWS_ACCESS_KEY_ID = env('DJANGO_DO_ACCESS_KEY_ID')
@@ -22,7 +22,7 @@ AWS_S3_ENDPOINT_URL = 'https://fra1.digitaloceanspaces.com'
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_LOCATION = 'aalondon'
+AWS_LOCATION = 'chriswedgwood'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ###########################################
@@ -32,7 +32,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Configure file storage settings 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_MEDIA_LOCATION = 'aalondon/media'
+AWS_S3_MEDIA_LOCATION = 'chriswedgwood/media'
 
 # MEDIA
 
