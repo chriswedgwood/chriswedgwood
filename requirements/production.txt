@@ -9,3 +9,4 @@ boto3==1.9.215
 
 celery==4.3.0
 sentry-sdk==1.0.0
+whitenoise==5.2.0
