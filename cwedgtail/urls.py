@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, url,path
 from django.conf import settings
 from django.contrib import admin
 
@@ -8,7 +8,13 @@ from wagtail.core import urls as wagtail_urls
 
 from search import views as search_views
 
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
+    path('sentry-debug/', trigger_error),
     url(r'^django-admin/', admin.site.urls),
 
     url(r'^admin/', include(wagtailadmin_urls)),
