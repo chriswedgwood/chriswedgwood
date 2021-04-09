@@ -1,5 +1,5 @@
 Django>=2.2,<2.3
-wagtail>=2.10,<2.11
+wagtail>=2.11,<2.12
 django-environ==0.4.3
 django-extensions==1.8.1
 psycopg2-binary==2.8.6
