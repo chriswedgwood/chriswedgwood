@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail.core', 
 
     'modelcluster',
     'taggit',
@@ -149,3 +149,5 @@ WAGTAIL_SITE_NAME = "cwedgtail"
 BASE_URL = 'http://example.com'
 
 
+
+CSRF_COOKIE_NAME = "XCSRF-TOKEN"
