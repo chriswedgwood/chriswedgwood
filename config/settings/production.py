@@ -11,7 +11,7 @@ except ImportError:
 
 
 SECRET_KEY = env('DJANGO_SECRET_KEY')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['chriswedgwood.com','www.chriswedgwood.com',] 
 
 ############################################
