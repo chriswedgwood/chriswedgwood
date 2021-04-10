@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'wagtail.contrib.modeladmin',  # Don't repeat if it's there already
+    'wagtailmenus',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +89,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cwedgtail.context_processors.ga_tracking_id'
+                'cwedgtail.context_processors.ga_tracking_id',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },
