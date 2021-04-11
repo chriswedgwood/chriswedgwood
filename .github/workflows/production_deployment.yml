@@ -38,5 +38,5 @@ jobs:
           playbookName: ".ansible/production/deploy.yml"
           inventoryFile: ".ansible/production/hosts"
           keyFile: ".ansible/production/connect.pem"
-          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS_PRODUCTION }}
+          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
           verbosity: "v"
