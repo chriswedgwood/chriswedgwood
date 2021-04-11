@@ -1,3 +1,0 @@
-systemctl status nginx.service
-
-systemctl status chriswedgwood.service

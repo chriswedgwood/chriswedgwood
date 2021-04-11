@@ -354,7 +354,7 @@
 		height: 260px;      
 	}
 	header .header-content {
-		background: #fff url(img/header-content-bg.png) no-repeat 50% top;	
+		background: #fff url(../images/header-content-bg.png) no-repeat 50% top;	
 		background-size: 300px 213px;
 	}
    header h1#logo-text a {	 		

@@ -1,0 +1,28 @@
+- name: Make sure we have a 'deployer' group
+  group:
+    name: deployer
+    state: present
+
+- name: Allow 'deployer' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%deployer'
+    line: '%deployer ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: Add sudoers users to deployer group
+  user:
+    name=deployer
+    groups=deployer
+    append=yes
+    state=present
+    createhome=yes
+    shell=/bin/bash
+
+- name: Set up authorized keys for the deployer user
+  authorized_key: user=deployer key="{{item}}"
+  with_file:
+    - ~/.ssh/id_rsa.pub
+
+

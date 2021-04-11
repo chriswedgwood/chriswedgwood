@@ -45,10 +45,13 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail.core', 
 
     'modelcluster',
     'taggit',
+    'wagtail.api.v2',
+
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,6 +60,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'wagtail.contrib.modeladmin',  # Don't repeat if it's there already
+    'wagtailmenus',
 ]
 
 MIDDLEWARE = [
@@ -67,8 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'wagtail.core.middleware.SiteMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 
 ]
@@ -88,7 +92,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cwedgtail.context_processors.ga_tracking_id'
+                'cwedgtail.context_processors.ga_tracking_id',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },
@@ -149,3 +154,7 @@ WAGTAIL_SITE_NAME = "cwedgtail"
 BASE_URL = 'http://example.com'
 
 
+
+CSRF_COOKIE_NAME = "XCSRF-TOKEN"
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

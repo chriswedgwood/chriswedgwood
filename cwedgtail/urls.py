@@ -1,6 +1,8 @@
 from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
+from django.urls import path
+
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
@@ -8,13 +10,23 @@ from wagtail.core import urls as wagtail_urls
 
 from search import views as search_views
 
+from home.api import api_router
+
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
+    path('sentry-debug/', trigger_error),
     url(r'^django-admin/', admin.site.urls),
 
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
+    path('api/v2/', api_router.urls),
+
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
