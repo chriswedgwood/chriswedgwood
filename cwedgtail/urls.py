@@ -10,6 +10,8 @@ from wagtail.core import urls as wagtail_urls
 
 from search import views as search_views
 
+from home.api import api_router
+
 
 def trigger_error(request):
     division_by_zero = 1 / 0
@@ -23,6 +25,8 @@ urlpatterns = [
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
+    path('api/v2/', api_router.urls),
+
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in

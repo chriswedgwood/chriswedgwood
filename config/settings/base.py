@@ -49,6 +49,9 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    'wagtail.api.v2',
+
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -153,3 +156,5 @@ BASE_URL = 'http://example.com'
 
 
 CSRF_COOKIE_NAME = "XCSRF-TOKEN"
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

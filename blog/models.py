@@ -14,6 +14,7 @@ from wagtail.snippets.models import register_snippet
 from wagtail.images.blocks import ImageChooserBlock
 from.blocks import CodeBlock
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from wagtail.api import APIField
 
 
 register = template.Library()
@@ -88,6 +89,12 @@ class BlogPage(Page):
         FieldPanel('intro'),
         StreamFieldPanel('body'),
         InlinePanel('gallery_images', label="Gallery images"),
+    ]
+    api_fields = [
+        APIField('intro'),
+        APIField('tags'),
+        APIField('body'),
+        APIField('categories'),
     ]
 
     def get_context(self, request):

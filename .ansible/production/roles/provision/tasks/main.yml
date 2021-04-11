@@ -1,0 +1,6 @@
+##
+# Configure the server for the Django app
+##
+- include: 01_server.yml
+- include: 02_deployer.yml
+

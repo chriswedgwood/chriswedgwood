@@ -243,5 +243,5 @@ production/group_vars/*
 local/group_vars/*
 static/*
 
-env.j2
+
 
