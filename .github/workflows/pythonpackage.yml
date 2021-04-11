@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     env:
-      DATABASE_URL: 'postgres://postgres:postgres@localhost:5432/chriswegwood' 
+      DATABASE_URL: 'postgres://postgres:postgres@localhost:5432/chriswedgwood' 
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
