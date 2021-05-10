@@ -32,7 +32,7 @@ class BlogIndexPage(Page):
         context = super(BlogIndexPage, self).get_context(request)
         if "category" in request.GET:
             category = request.GET['category']
-            blogpages_list = BlogPage.objects.filter(categories__name__iexact=category)
+            blogpages_list = BlogPage.objects.filter(categories__name__iexact=category).order_by('-date')
         else:
             blogpages_list = BlogPage.objects.filter()
 
