@@ -32,9 +32,9 @@ class BlogIndexPage(Page):
         context = super(BlogIndexPage, self).get_context(request)
         if "category" in request.GET:
             category = request.GET['category']
-            blogpages_list = BlogPage.objects.filter(categories__name__iexact=category).order_by('-date')
+            blogpages_list = BlogPage.objects.filter(live=True).filter(categories__name__iexact=category).order_by('-date')
         else:
-            blogpages_list = BlogPage.objects.filter().order_by('-date')
+            blogpages_list = BlogPage.objects.filter(live=True).order_by('-date')
 
         paginator = Paginator(blogpages_list, 20)  # Show 25 contacts per page
         page = request.GET.get('page')
