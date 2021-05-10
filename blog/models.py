@@ -36,7 +36,7 @@ class BlogIndexPage(Page):
         else:
             blogpages_list = BlogPage.objects.filter()
 
-        paginator = Paginator(blogpages_list, 2)  # Show 25 contacts per page
+        paginator = Paginator(blogpages_list, 20)  # Show 25 contacts per page
         page = request.GET.get('page')
         try:
             blogpages = paginator.page(page)
