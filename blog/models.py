@@ -15,6 +15,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from.blocks import CodeBlock
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from wagtail.api import APIField
+from wagtailcodeblock.blocks import CodeBlock as NewCodeBlock
 
 
 register = template.Library()
@@ -63,7 +64,10 @@ class BlogPage(Page):
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
         ('image', ImageChooserBlock()),
-        ('code', CodeBlock())
+        ('code', CodeBlock()),
+        ('codedeu', NewCodeBlock())
+        
+
     ])
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     categories = ParentalManyToManyField('blog.BlogCategory', blank=True)

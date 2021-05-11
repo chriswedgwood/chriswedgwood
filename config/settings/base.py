@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core', 
+    'wagtail.core',
+    'wagtailcodeblock', 
 
     'modelcluster',
     'taggit',
@@ -158,3 +159,17 @@ BASE_URL = 'http://example.com'
 CSRF_COOKIE_NAME = "XCSRF-TOKEN"
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+
+
+WAGTAIL_CODE_BLOCK_LANGUAGES = (
+    ('bash', 'Bash/Shell'),
+    ('css', 'CSS'),
+    ('diff', 'diff'),
+    ('html', 'HTML'),
+    ('javascript', 'Javascript'),
+    ('json', 'JSON'),
+    ('python', 'Python'),
+    ('scss', 'SCSS'),
+    ('yaml', 'YAML'),
+    ('sql', 'SQL'),
+)

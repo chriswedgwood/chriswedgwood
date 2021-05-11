@@ -6,3 +6,4 @@ psycopg2-binary==2.8.6
 wagtailmenus==3.0.2
 pytest==6.2.3
 pytest-django==4.2.0
+wagtailcodeblock==1.17.1.0
