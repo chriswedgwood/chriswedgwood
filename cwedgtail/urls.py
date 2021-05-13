@@ -11,6 +11,7 @@ from wagtail.core import urls as wagtail_urls
 from search import views as search_views
 
 from home.api import api_router
+from instagramgobbler import views as instagramgobbler_views
 
 
 def trigger_error(request):
@@ -26,6 +27,8 @@ urlpatterns = [
 
     url(r'^search/$', search_views.search, name='search'),
     path('api/v2/', api_router.urls),
+    path('gobbler/', instagramgobbler_views.generate_long_term_token),
+
 
 
     # For anything not caught by a more specific rule above, hand over to
