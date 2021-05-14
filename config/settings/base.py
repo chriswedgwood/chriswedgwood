@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'blog',
+    'instagramgobbler',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -172,4 +173,13 @@ WAGTAIL_CODE_BLOCK_LANGUAGES = (
     ('scss', 'SCSS'),
     ('yaml', 'YAML'),
     ('sql', 'SQL'),
+    ('ini', 'Ini'),
 )
+
+
+# INSTAGRAMGOBBLER
+INSTAGRAM_ACCESS_TOKEN_URL = "https://api.instagram.com/oauth/access_token"
+INSTAGRAM_CLIENT_ID = env("INSTAGRAM_CLIENT_ID")
+INSTAGRAM_CLIENT_SECRET = env("INSTAGRAM_CLIENT_SECRET")
+INSTAGRAM_REDIRECT_URI = env("INSTAGRAM_REDIRECT_URI")
+INSTAGRAM_SHORT_TOKEN_URL = "https://graph.instagram.com/access_token"

@@ -1,0 +1,11 @@
+
+
+
+{{ step }}       
+    <div><span>Code:</span><span>{% if step == 0 %} Failed {%else%} Succeeded {%endif%}</span></div></div>
+    <div><span>Short Lived Token:</span><span>{% if step <= 1 %} Failed {%else%} Succeeded {%endif%}</span></div>
+    <div><span>Long Lived Token:</span><span>{% if step <= 2 %} Failed {%else%} Succeeded {%endif%}</span></div>
+    <div><span>Saved in Db:</span><span>{% if step <= 3 %} Failed {%else%} Succeeded {%endif%}</span></div>
+        
+
+
