@@ -182,3 +182,6 @@ INSTAGRAM_ACCESS_TOKEN_URL = "https://api.instagram.com/oauth/access_token"
 INSTAGRAM_CLIENT_ID = "env required DO NOT CHECK IN A VALUE FOR THIS"
 INSTAGRAM_CLIENT_SECRET = "env required DO NOT CHECK IN A VALUE FOR THIS"
 INSTAGRAM_REDIRECT_URI = "env required DO NOT CHECK IN A VALUE FOR THIS"
+INSTAGRAM_SHORT_TOKEN_URL = "https://graph.instagram.com/access_token"
+
+
