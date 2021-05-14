@@ -15,6 +15,7 @@ from __future__ import absolute_import, unicode_literals
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 import environ
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,93 +32,86 @@ env = environ.Env()
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
-    'search',
-    'blog',
-    'instagramgobbler',
-
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail.core',
-    'wagtailcodeblock', 
-
-    'modelcluster',
-    'taggit',
-    'wagtail.api.v2',
-
-    'rest_framework',
-
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django_extensions',
-    'wagtail.contrib.modeladmin',  # Don't repeat if it's there already
-    'wagtailmenus',
+    "home",
+    "search",
+    "blog",
+    "instagramgobbler",
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail.core",
+    "wagtailcodeblock",
+    "modelcluster",
+    "taggit",
+    "wagtail.api.v2",
+    "rest_framework",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django_extensions",
+    "wagtail.contrib.modeladmin",  # Don't repeat if it's there already
+    "wagtailmenus",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.sites.middleware.CurrentSiteMiddleware',
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.contrib.sites.middleware.CurrentSiteMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = 'cwedgtail.urls'
+ROOT_URLCONF = "cwedgtail.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'cwedgtail/templates'),
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            os.path.join(BASE_DIR, "cwedgtail/templates"),
         ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'cwedgtail.context_processors.ga_tracking_id',
-                'wagtailmenus.context_processors.wagtailmenus',
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "cwedgtail.context_processors.ga_tracking_id",
+                "wagtailmenus.context_processors.wagtailmenus",
             ],
         },
     },
 ]
 
 
-
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///chriswedgwood'),
+    "default": env.db("DATABASE_URL", default="postgres:///chriswedgwood"),
 }
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -130,21 +124,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'cwedgtail/static'),
+    os.path.join(BASE_DIR, "cwedgtail/static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'collect_static')
+STATIC_ROOT = os.path.join(BASE_DIR, "collect_static")
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 
 # Wagtail settings
@@ -153,33 +147,32 @@ WAGTAIL_SITE_NAME = "cwedgtail"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
-
+BASE_URL = "http://example.com"
 
 
 CSRF_COOKIE_NAME = "XCSRF-TOKEN"
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 
 WAGTAIL_CODE_BLOCK_LANGUAGES = (
-    ('bash', 'Bash/Shell'),
-    ('css', 'CSS'),
-    ('diff', 'diff'),
-    ('html', 'HTML'),
-    ('javascript', 'Javascript'),
-    ('json', 'JSON'),
-    ('python', 'Python'),
-    ('scss', 'SCSS'),
-    ('yaml', 'YAML'),
-    ('sql', 'SQL'),
-    ('ini', 'Ini'),
+    ("bash", "Bash/Shell"),
+    ("css", "CSS"),
+    ("diff", "diff"),
+    ("html", "HTML"),
+    ("javascript", "Javascript"),
+    ("json", "JSON"),
+    ("python", "Python"),
+    ("scss", "SCSS"),
+    ("yaml", "YAML"),
+    ("sql", "SQL"),
+    ("ini", "Ini"),
 )
 
 
 # INSTAGRAMGOBBLER
 INSTAGRAM_ACCESS_TOKEN_URL = "https://api.instagram.com/oauth/access_token"
-INSTAGRAM_CLIENT_ID = env("INSTAGRAM_CLIENT_ID")
-INSTAGRAM_CLIENT_SECRET = env("INSTAGRAM_CLIENT_SECRET")
-INSTAGRAM_REDIRECT_URI = env("INSTAGRAM_REDIRECT_URI")
+INSTAGRAM_CLIENT_ID = env("INSTAGRAM_CLIENT_ID", default="")
+INSTAGRAM_CLIENT_SECRET = env("INSTAGRAM_CLIENT_SECRET", default="")
+INSTAGRAM_REDIRECT_URI = env("INSTAGRAM_REDIRECT_URI", default="")
 INSTAGRAM_SHORT_TOKEN_URL = "https://graph.instagram.com/access_token"
