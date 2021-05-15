@@ -177,3 +177,5 @@ INSTAGRAM_CLIENT_ID = env("INSTAGRAM_CLIENT_ID", default="")
 INSTAGRAM_CLIENT_SECRET = env("INSTAGRAM_CLIENT_SECRET", default="")
 INSTAGRAM_REDIRECT_URI = env("INSTAGRAM_REDIRECT_URI", default="")
 INSTAGRAM_SHORT_TOKEN_URL = "https://graph.instagram.com/access_token"
+
+TEST = "TEST"
