@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import InstaToken
+
+
+class InstaTokenAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(InstaToken, InstaTokenAdmin)
