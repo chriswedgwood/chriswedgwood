@@ -1,0 +1,1898 @@
+/*
+=====================================================================
+*   Keep It Simple v2.0 Default Stylesheet
+*   url: styleshout.com
+*   07-12-2014
+=====================================================================
+
+TOC:
+
+a. Webfonts and Icon fonts
+b. Reset
+c. Default Styles
+   1. Basic
+   2. Typography
+   3. Links
+   4. Media
+   5. Buttons
+   6. Forms
+   d. Grid
+   e. Others
+   1. Clearing
+   2. Misc
+
+=====================================================================  */
+
+/* ------------------------------------------------------------------ */
+/* a. Webfonts and Icon fonts
+ -------------------------------------------------------------------- */
+
+@import url("fonts.css");
+@import url("font-awesome.min.css");
+
+/* ------------------------------------------------------------------
+/* b. Reset
+      Adapted from:
+      Normalize.css - https://github.com/necolas/normalize.css/
+      HTML5 Doctor Reset - html5doctor.com/html-5-reset-stylesheet/
+/* ------------------------------------------------------------------ */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+blockquote,
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #f1ee78;
+  color: #555;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* c. Default and Basic Styles
+      Adapted from:
+      Skeleton CSS Framework - http://www.getskeleton.com/
+      Typeplate Typographic Starter Kit - http://typeplate.com/
+/* ------------------------------------------------------------------ */
+
+/* 1. Basic  ------------------------------------------------------- */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  font-family: "merriweather-regular", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 30px;
+  color: #4a5153;
+
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 2. Typography
+      Vertical rhythm with leading derived from 6
+--------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #444;
+  font-family: "opensans-semibold", sans-serif;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: inherit;
+}
+h1 {
+  font-size: 38px;
+  line-height: 42px;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 6px;
+}
+h3 {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 6px;
+}
+h5 {
+  font-size: 18px;
+  line-height: 30px;
+}
+h6 {
+  font-size: 14px;
+  line-height: 30px;
+}
+.subheader {
+}
+
+p {
+  margin: 0 0 0px 0;
+}
+p img {
+  margin: 0;
+}
+p.lead {
+  font: 18px/33px "opensans-light", sans-serif;
+  margin-bottom: 18px;
+}
+
+/* for 'em' and 'strong' tags, font-size and line-height should be same with
+the body tag due to rendering problems in some browsers */
+em {
+  font: 15px/30px "merriweather-italic", sans-serif;
+}
+strong,
+b {
+  font: 15px/30px "merriweather-bold", sans-serif;
+}
+small {
+  font-size: 11px;
+  line-height: inherit;
+}
+
+/*	Blockquotes */
+blockquote {
+  margin: 30px 0px;
+  padding-left: 40px;
+  position: relative;
+}
+blockquote:before {
+  content: "\201C";
+  opacity: 0.45;
+  font-size: 80px;
+  line-height: 0px;
+  margin: 0;
+  font-family: arial, sans-serif;
+
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+blockquote p {
+  font-family: georgia, serif;
+  font-style: italic;
+  padding: 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+blockquote cite {
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 18px;
+}
+blockquote cite:before {
+  content: "\2014 \0020";
+}
+blockquote cite a,
+blockquote cite a:visited {
+  color: #8b9798;
+  border: none;
+}
+
+/* ---------------------------------------------------------------------
+/*  Pull Quotes Markup
+/*
+    <aside class="pull-quote">
+		<blockquote>
+			<p></p>
+		</blockquote>
+	 </aside>
+/*
+/* --------------------------------------------------------------------- */
+.pull-quote {
+  position: relative;
+  padding: 18px 30px 18px 0px;
+}
+.pull-quote:before,
+.pull-quote:after {
+  height: 1em;
+  opacity: 0.45;
+  position: absolute;
+  font-size: 80px;
+  font-family: Arial, Sans-Serif;
+}
+.pull-quote:before {
+  content: "\201C";
+  top: 33px;
+  left: 0;
+}
+.pull-quote:after {
+  content: "\201D";
+  bottom: -33px;
+  right: 0;
+}
+.pull-quote blockquote {
+  margin: 0;
+}
+.pull-quote blockquote:before {
+  content: none;
+}
+
+/* Abbreviations */
+abbr {
+  font-family: "opensans-bold", sans-serif;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  color: gray;
+}
+abbr:hover {
+  cursor: help;
+}
+
+/* drop cap */
+.drop-cap:first-letter {
+  float: left;
+  margin: 0;
+  padding: 14px 6px 0 0;
+  font-size: 84px;
+  font-family: /* Copperplate */ "opensans-bold", sans-serif;
+  line-height: 60px;
+  text-indent: 0;
+  background: transparent;
+  color: inherit;
+}
+
+hr {
+  border: solid #e8e8e8;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 11px 0 30px;
+  height: 0;
+}
+
+/*  3. Links  ------------------------------------------------------- */
+
+a,
+a:visited {
+  text-decoration: none;
+  outline: 0;
+  color: #447294;
+
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: #34393a;
+}
+p a,
+p a:visited {
+  line-height: inherit;
+}
+
+/*  4. List  --------------------------------------------------------- */
+
+ul,
+ol {
+  margin-bottom: 24px;
+  margin-top: 12px;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+ol,
+ul.square,
+ul.circle,
+ul.disc {
+  margin-left: 17px;
+}
+ul.square {
+  list-style: square;
+}
+ul.circle {
+  list-style: circle;
+}
+ul.disc {
+  list-style: disc;
+}
+ul li {
+  padding-left: 4px;
+}
+ul.large li {
+}
+li p {
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 6px 0 6px 17px;
+}
+ul ul li,
+ul ol li,
+ol ol li,
+ol ul li {
+}
+
+/* ---------------------------------------------------------------------
+/*  Stats Tab Markup
+
+    <ul class="stats-tabs">
+		<li><a href="#">[value]<em>[name]</em></a></li>
+	 </ul>
+
+    Extend this object into your markup.
+/*
+/* --------------------------------------------------------------------- */
+.stats-tabs {
+  padding: 0;
+  margin: 24px 0;
+}
+.stats-tabs li {
+  display: inline-block;
+  margin: 0 10px 18px 0;
+  padding: 0 10px 0 0;
+  border-right: 1px solid #ccc;
+}
+.stats-tabs li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.stats-tabs li a {
+  display: inline-block;
+  font-size: 24px;
+  font-family: "opensans-bold", sans-serif;
+  border: none;
+  color: #444;
+}
+.stats-tabs li a:hover {
+  color: #447294;
+}
+.stats-tabs li a em {
+  display: block;
+  margin: 6px 0 0 0;
+  font-size: 14px;
+  font-family: "opensans-regular", sans-serif;
+  color: #8b9798;
+}
+
+/* definition list */
+dl {
+  margin: 12px 0;
+}
+dt {
+  margin: 0;
+  color: #447294;
+}
+dd {
+  margin: 0 0 0 20px;
+}
+
+/* Lining Definition Style Markup */
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.lining dd + dd:before {
+  content: ", ";
+}
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2em;
+}
+
+/* Dictionary Definition Style Markup */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2em;
+}
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+/* Pagination */
+.pagination {
+  margin: 36px auto;
+  text-align: center;
+}
+.pagination ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.pagination .page-numbers {
+  font: 15px/21px "opensans-bold", sans-serif;
+  display: inline-block;
+  padding: 6px 10px;
+  margin-right: 3px;
+  margin-bottom: 6px;
+  color: #6e757c;
+  background-color: #e6e8eb;
+
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+
+  border-radius: 3px;
+}
+.pagination .page-numbers:hover {
+  background: #838a91;
+  color: #fff;
+}
+.pagination .current,
+.pagination .current:hover {
+  background-color: #447294;
+  color: #fff;
+}
+.pagination .inactive,
+.pagination .inactive:hover {
+  background-color: #e6e8eb;
+  color: #a9adb2;
+}
+.pagination .prev,
+.pagination .next {
+}
+
+/* 5. Media   --------------------------------------------------------- */
+
+img,
+video,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+img.pull-right {
+  margin: 12px 0px 0px 18px;
+}
+img.pull-left {
+  margin: 12px 18px 0px 0px;
+}
+
+/* 6. Buttons  --------------------------------------------------------- */
+
+.button,
+.button:visited,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  font: 14px/30px "opensans-bold", sans-serif;
+  background: #9ccf5f;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 20px;
+  margin-bottom: 18px;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  border-radius: 3px;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background: #70a431;
+  color: #fff;
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  background: #70a431;
+  color: #fff;
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* 7. Forms  --------------------------------------------------------- */
+
+form {
+  margin-bottom: 24px;
+}
+fieldset {
+  margin-bottom: 24px;
+}
+
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  display: block;
+  padding: 12px 15px;
+  margin: 0 0 24px 0;
+  border: 0;
+  outline: none;
+  vertical-align: middle;
+  /* min-width: 225px; */
+  max-width: 100%;
+
+  background: #e9ebee;
+  color: #b1b1b1;
+
+  font-family: "opensans-regular", sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  height: 54px;
+  border-radius: 3px;
+}
+textarea {
+  min-height: 162px;
+}
+
+/* select { padding: 0;
+   width: 220px;
+   } */
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  background: #afb7be;
+  color: #fff;
+}
+
+label,
+legend {
+  font: 16px/24px "opensans-bold", sans-serif;
+  margin: 12px 0;
+  color: #3d4145;
+  display: block;
+}
+label span,
+legend span {
+  color: #8b9798;
+  font: 14px/24px "opensans-regular", sans-serif;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  font-size: 15px;
+  color: #3d4145;
+}
+
+input[type="checkbox"] {
+  display: inline;
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Grid
+--------------------------------------------------------------------- */
+
+/* default
+--------------------------------------------------------------- */
+.row {
+  width: 94%;
+  max-width: 1008px;
+  margin: 0 auto;
+}
+/* fixed width for IE8 */
+.ie .row {
+  width: 1000px;
+}
+
+.narrow .row {
+  max-width: 980px;
+}
+
+.row .row {
+  width: auto;
+  max-width: none;
+  margin: 0 -18px;
+}
+
+/* row clearing */
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+.column,
+.columns {
+  position: relative;
+  padding: 0 18px;
+  min-height: 1px;
+  float: left;
+}
+.column.centered,
+.columns.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+/* removed gutters */
+.row.collapsed > .column,
+.row.collapsed > .columns,
+.column.collapsed,
+.columns.collapsed {
+  padding: 0;
+}
+
+[class*="column"] + [class*="column"]:last-child {
+  float: right;
+}
+[class*="column"] + [class*="column"].end {
+  float: right;
+}
+
+/* column widths */
+.one,
+.row .one {
+  width: 8.33333%;
+}
+.two,
+.row .two {
+  width: 16.66667%;
+}
+.three,
+.row .three {
+  width: 25%;
+}
+.four,
+.row .four {
+  width: 33.33333%;
+}
+.five,
+.row .five {
+  width: 41.66667%;
+}
+.six,
+.row .six {
+  width: 50%;
+}
+.seven,
+.row .seven {
+  width: 58.33333%;
+}
+.eight,
+.row .eight {
+  width: 66.66667%;
+}
+.nine,
+.row .nine {
+  width: 75%;
+}
+.ten .row .ten {
+  width: 83.33333%;
+}
+.eleven,
+.row .eleven {
+  width: 91.66667%;
+}
+.twelve,
+.row .twelve {
+  width: 100%;
+}
+
+/* Offsets */
+.row .offset-1 {
+  margin-left: 8.33333%;
+}
+.row .offset-2 {
+  margin-left: 16.66667%;
+}
+.row .offset-3 {
+  margin-left: 25%;
+}
+.row .offset-4 {
+  margin-left: 33.33333%;
+}
+.row .offset-5 {
+  margin-left: 41.66667%;
+}
+.row .offset-6 {
+  margin-left: 50%;
+}
+.row .offset-7 {
+  margin-left: 58.33333%;
+}
+.row .offset-8 {
+  margin-left: 66.66667%;
+}
+.row .offset-9 {
+  margin-left: 75%;
+}
+.row .offset-10 {
+  margin-left: 83.33333%;
+}
+.row .offset-11 {
+  margin-left: 91.66667%;
+}
+
+/* block grids
+--------------------------------------------------------------------- */
+.bgrid-sixths [class*="column"] {
+  width: 16.66667%;
+}
+.bgrid-quarters [class*="column"] {
+  width: 25%;
+}
+.bgrid-thirds [class*="column"] {
+  width: 33.33333%;
+}
+.bgrid-halves [class*="column"] {
+  width: 50%;
+}
+
+[class*="bgrid"] [class*="column"] + [class*="column"]:last-child {
+  float: left;
+}
+
+/* Left clearing for block grid columns - columns that changes width in
+different screen sizes. Allows columns with different heights to align
+properly.
+--------------------------------------------------------------------- */
+.first {
+  clear: left;
+} /* first column in default screen */
+.s-first {
+  clear: none;
+} /* first column in smaller screens */
+
+/* smaller screens
+--------------------------------------------------------------- */
+@media only screen and (max-width: 900px) {
+  /* block grids on small screens */
+  .s-bgrid-sixths [class*="column"] {
+    width: 16.66667%;
+  }
+  .s-bgrid-quarters [class*="column"] {
+    width: 25%;
+  }
+  .s-bgrid-thirds [class*="column"] {
+    width: 33.33333%;
+  }
+  .s-bgrid-halves [class*="column"] {
+    width: 50%;
+  }
+
+  /* block grids left clearing */
+  .first {
+    clear: none;
+  }
+  .s-first {
+    clear: left;
+  }
+}
+
+/* screenwidth less than 768px - mobile/smaller tablets
+--------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+  .row {
+    width: 480px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .column,
+  .columns {
+    width: auto !important;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 30px;
+  }
+  .row .row {
+    width: auto;
+    max-width: none;
+    margin: 0 -30px;
+  }
+
+  [class*="column"] + [class*="column"]:last-child {
+    float: none;
+  }
+  [class*="bgrid"] [class*="column"] + [class*="column"]:last-child {
+    float: none;
+  }
+
+  /* Offsets */
+  .row .offset-1 {
+    margin-left: 0%;
+  }
+  .row .offset-2 {
+    margin-left: 0%;
+  }
+  .row .offset-3 {
+    margin-left: 0%;
+  }
+  .row .offset-4 {
+    margin-left: 0%;
+  }
+  .row .offset-5 {
+    margin-left: 0%;
+  }
+  .row .offset-6 {
+    margin-left: 0%;
+  }
+  .row .offset-7 {
+    margin-left: 0%;
+  }
+  .row .offset-8 {
+    margin-left: 0%;
+  }
+  .row .offset-9 {
+    margin-left: 0%;
+  }
+  .row .offset-10 {
+    margin-left: 0%;
+  }
+  .row .offset-11 {
+    margin-left: 0%;
+  }
+}
+
+/* screenwidth less than or equal 480px - mobile wide
+--------------------------------------------------------------- */
+@media only screen and (max-width: 480px) {
+  .row {
+    width: auto;
+  }
+}
+
+/* larger screens
+--------------------------------------------------------------- */
+@media screen and (min-width: 1200px) {
+  .wide .row {
+    max-width: 1180px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* e. Others
+/* ------------------------------------------------------------------ */
+
+/*  1. Clearing
+    (http://nicolasgallagher.com/micro-clearfix-hack/
+--------------------------------------------------------------------- */
+
+.group:before,
+.group:after {
+  content: " ";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+
+/*  2. Misc -------------------------------------------------------- */
+
+.remove-bottom {
+  margin-bottom: 0 !important;
+}
+.half-bottom {
+  margin-bottom: 12px !important;
+}
+.add-bottom {
+  margin-bottom: 24px !important;
+}
+.no-border {
+  border: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.align-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/*
+=====================================================================
+*   Keep It Simple v2.0 Layout Stylesheet
+*   url: styleshout.com
+*   07-12-2014
+=====================================================================
+
+   TOC:
+   a. Default Overrides and Common Styles
+   b. Header Styles
+   c. Content
+   d. Sidebar
+   e. Entry
+   f. Archives
+   g. Footer
+ 
+===================================================================== */
+
+/* a. Default Overrides and Common Styles
+/* ------------------------------------------------------------------ */
+
+body {
+  background: #f6f5f5;
+  border-top: 6px solid #447294;
+}
+.page {
+  padding-bottom: 18px;
+  margin-bottom: 36px;
+}
+
+.page h2,
+.entry h2,
+.entry h2 a {
+  font: 31px/36px "opensans-semibold", sans-serif;
+  color: #444;
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
+}
+.page h2 {
+  margin-bottom: 18px;
+}
+
+/* b. Header Styles
+/* ------------------------------------------------------------------ */
+
+#home-logo h1 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#home-logo h1 a {
+  margin: 0;
+  padding: 0;
+  font: normal 70px Georgia, Serif;
+  letter-spacing: -3px;
+  color: #447294;
+  text-decoration: none;
+}
+
+#home-logo p {
+  margin: 0;
+  padding: 0;
+  font: 16px/24px "opensans-light", Georgia, Serif;
+  font-weight: normal;
+  color: #c8c8c8;
+  width: 400px;
+
+  /* change the values of top and left to adjust the position */
+  position: relative;
+  top: 0px;
+  left: 6px;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+}
+header .header-content {
+  background: #fff;
+  height: 50px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+/* For high-res devices */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  header .header-content {
+    background: #fff;
+    background-size: 361px 256px;
+  }
+}
+
+/* header logo */
+header h1#logo-text {
+  margin: 0;
+  padding: 0;
+
+  /* change the values of top and left to adjust the position of the logo text */
+  position: absolute;
+  top: 108px;
+  left: 18px;
+}
+header h1#logo-text a {
+  margin: 0;
+  padding: 0;
+  font: normal 75px Georgia, Serif;
+  letter-spacing: -5px;
+  color: #447294;
+  text-decoration: none;
+}
+header p#intro {
+  margin: 0;
+  padding: 0;
+  font: 16px/24px "opensans-light", Georgia, Serif;
+  font-weight: normal;
+  color: #c8c8c8;
+  width: 400px;
+
+  /* change the values of top and left to adjust the position */
+  position: absolute;
+  top: 192px;
+  left: 30px;
+}
+
+/* primary navigation
+--------------------------------------------------------------------- */
+#nav-wrap,
+#nav-wrap ul,
+#nav-wrap li,
+#nav-wrap a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* nav-wrap */
+#nav-wrap {
+  font: 12px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #f5f4f3;
+  border-bottom: 1px solid #eae8e8;
+  width: 100%;
+
+  float: left;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+/* hide toggle button */
+#nav-wrap > a {
+  display: none;
+}
+
+ul#nav {
+  min-height: 50px;
+  width: auto;
+  margin-left: 20px;
+
+  float: left;
+  position: relative;
+  top: 0;
+
+  /* left align the menu */
+  text-align: left;
+}
+ul#nav li {
+  position: relative;
+  list-style: none;
+  height: 50px;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+/* float left to remove gaps between 1st level list items */
+ul#nav > li {
+  float: left;
+}
+
+/* Links */
+ul#nav li a {
+  display: inline-block;
+  padding: 0 15px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #666666;
+
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+ul#nav li a:hover {
+  color: #222;
+}
+ul#nav li a:active {
+  background-color: transparent !important;
+}
+ul#nav li.current > a {
+  background: #fff;
+  padding: 0 14px;
+  border-right: 1px solid #eae8e8;
+  border-top: 1px solid #eae8e8;
+  border-left: 1px solid #eae8e8;
+  border-radius: 3px 3px 0 0;
+}
+
+/* sub menu */
+ul#nav ul {
+  position: absolute;
+  top: 52px;
+  left: 0px;
+  padding-bottom: 12px;
+  background: #f5f4f3;
+  min-width: 100%;
+  border: 1px solid #eae8e8;
+  border-top: none;
+
+  border-radius: 0 0 3px 3px;
+
+  /* for transition effects */
+  opacity: 0;
+  filter: alpha(opacity=0);
+
+  -webkit-transition: opacity 0.25s ease 0.1s;
+  -moz-transition: opacity 0.25s ease 0.1s;
+  -o-transition: opacity 0.25s ease 0.1s;
+  -ms-transition: opacity 0.25s ease 0.1s;
+  transition: opacity 0.25s ease 0.1s;
+}
+
+/* 
+ul#nav ul ul {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	border-radius: 0 3px 3px 0;
+}
+*/
+
+ul#nav ul li {
+  padding: 0;
+  display: block;
+  text-align: left;
+
+  /* for transition effects */
+  height: 0;
+  overflow: hidden;
+
+  -webkit-transition: height 0.25s ease 0.1s;
+  -moz-transition: height 0.25s ease 0.1s;
+  -o-transition: height 0.25s ease 0.1s;
+  -ms-transition: height 0.25s ease 0.1s;
+  transition: height 0.25s ease 0.1s;
+}
+
+/* on hover */
+ul#nav li:hover > ul {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+ul#nav li:hover > ul li {
+  height: 42px;
+  overflow: visible;
+}
+
+/* sub menu anchor links */
+ul#nav ul li a {
+  padding: 6px 20px;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 13px;
+  font-family: "opensans-regular", sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* c. Content
+--------------------------------------------------------------------- */
+
+#content-wrap {
+  background: #fff;
+  padding: 42px 0 36px 0;
+}
+#content-wrap #main {
+  padding-right: 40px;
+}
+
+/* d. Sidebar 
+--------------------------------------------------------------------- */
+
+#sidebar {
+  padding-top: 0px;
+  padding-left: 40px;
+}
+#sidebar h3 {
+  font: 15px/24px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#sidebar .widget {
+  margin-bottom: 18px;
+}
+#sidebar p {
+  margin-bottom: 12px;
+}
+#sidebar hr {
+  margin-bottom: 24px;
+}
+
+/* search  */
+#sidebar .widget_search {
+  padding-top: 0;
+  margin-bottom: 36px;
+}
+#sidebar .widget_search h3 {
+  display: none;
+}
+#sidebar .widget_search form {
+  position: relative;
+  margin: 0;
+}
+#sidebar .widget_search .text-search {
+  padding-right: 40px;
+  border: none;
+  width: 100%;
+  min-width: 150px;
+  border-radius: 3px;
+}
+#sidebar .widget_search .submit-search {
+  background: url(../images/search-icon.png) no-repeat;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: -9px 0 0 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 18px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #sidebar .widget_search .submit-search {
+    background: url(../images/search-icon_@2x.png) no-repeat;
+    background-size: 18px 18px;
+  }
+}
+
+/* categories  */
+#sidebar .widget_categories {
+}
+#sidebar .widget_categories ul {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+/* link List */
+#sidebar .link-list {
+  padding: 0;
+  margin: 18px 0 24px 0;
+}
+#sidebar .link-list li {
+  font: 15px/30px "merriweather-regular", sans-serif;
+  padding: 8px 0;
+  margin: 0;
+  border-bottom: 1px dotted #e6e6e6;
+}
+#sidebar .link-list li:first-child {
+  border-top: 1px dotted #e6e6e6;
+}
+#sidebar .link-list li a {
+  color: #4a5153;
+}
+#sidebar .link-list li a:hover {
+  color: #313131; /* color: #447294; */
+}
+
+/* tag cloud */
+#sidebar .tagcloud {
+  margin: 18px 0 24px -12px;
+  padding: 0;
+  font-size: 17px;
+}
+#sidebar .tagcloud a {
+  font: 12px/24px "opensans-bold", sans-serif !important;
+  display: inline-block;
+  float: left;
+  margin: 0 0 12px 12px;
+  padding: 6px 15px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  background: #e9ebee;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #778888;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  border-radius: 3px;
+}
+#sidebar .tagcloud a:hover {
+  color: #fff;
+  background: #447294;
+}
+
+/* e. Entry
+/* ------------------------------------------------------------------ */
+.entry {
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+.entry header {
+  height: auto;
+}
+
+.entry .entry-meta ul {
+  margin: 6px 0 18px;
+  color: #b7b9bd;
+  line-height: 24px;
+}
+.entry .entry-meta ul li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "merriweather-regular", sans-serif;
+}
+.entry .entry-meta ul .meta-sep {
+}
+.entry .entry-meta ul li a {
+  color: #b7b9bd;
+}
+
+.entry .entry-content-media {
+  margin: 24px 0 18px;
+}
+
+.entry .tags {
+  margin-top: 18px;
+  font-family: "opensans-regular", sans-serif;
+  color: #888;
+}
+.entry .tags a {
+  font-family: "opensans-bold", sans-serif;
+}
+
+/* post-nav */
+.post-nav {
+  margin: 18px 0 6px;
+  padding: 12px 0 0 0;
+  font: 15px/30px "opensans-light", sans-serif;
+}
+.post-nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 49%;
+  line-height: 30px;
+}
+.post-nav li a {
+  color: #888;
+}
+.post-nav li strong {
+  font: 16px/30px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  color: #447294;
+  letter-spacing: 0.5px;
+  display: block;
+}
+.post-nav li.next {
+  float: right;
+  text-align: right;
+}
+.post-nav li.prev {
+  float: left;
+  text-align: left;
+}
+
+/* Comments -------------------------------------------- */
+
+#comments {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+#comments h3 {
+  font: 20px/30px "opensans-bold", sans-serif;
+  margin-bottom: 6px;
+}
+
+/* Comments List */
+ol.commentlist {
+  border-top: 1px dotted #e1e5e3;
+  margin: 29px 0 54px 0;
+  padding: 0;
+}
+.commentlist > li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  border-bottom: 1px dotted #d9dedb;
+  padding: 24px 0 17px 0;
+  padding-left: 14%;
+}
+.commentlist li .avatar {
+  position: absolute;
+  left: 0px;
+  display: block;
+  height: 48px;
+  width: 48px;
+}
+.commentlist li .avatar img {
+  margin-top: 6px;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+}
+.commentlist li .comment-info cite {
+  font: 16px/30px "opensans-bold", sans-serif;
+  color: #454545;
+}
+.commentlist li .comment-info .comment-meta {
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+}
+.commentlist li .comment-info .comment-meta .reply {
+  font-family: "opensans-bold", sans-serif;
+}
+.commentlist li .comment-info .comment-meta .sep {
+  margin: 0 5px;
+  color: #aeb6b7;
+}
+.commentlist li .comment-text {
+  clear: both;
+  margin: 18px 0 0 0;
+  padding: 0;
+  line-height: 30px;
+}
+
+/* children */
+.commentlist li ul.children {
+  margin: 0;
+  padding: 18px 0 0 0;
+}
+.commentlist li ul.children li {
+  padding-left: 5%;
+  padding-top: 17px;
+  border-top: 1px dotted #d9dedb;
+}
+
+/* comment form ----------------------------------------- */
+
+#comments form {
+  margin-top: 36px;
+}
+#comments form label {
+  padding-left: 24px;
+  width: 41.66667%;
+  float: right;
+}
+#comments form div {
+  margin: 12px 0 18px 0;
+}
+#comments form input,
+#comments form textarea,
+#comments form select {
+  width: 58.33333%;
+  float: left;
+}
+#comments form .message label {
+  display: none;
+}
+#comments form textarea {
+  width: 100%;
+}
+#comments form button.submit {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 12px;
+}
+#comments form span.required {
+  color: #447294;
+  font-size: 15px;
+}
+
+/* page navigation -------------------------------------- */
+
+.pagenav {
+  font: 18px/30px "opensans-bold", sans-serif;
+  text-align: left;
+  margin-top: 12px;
+  padding-top: 18px;
+  margin-bottom: 48px;
+  border-top: 1px solid #e8e8e8;
+}
+.pagenav p {
+  margin-bottom: 18px;
+}
+.pagenav span {
+  font: 18px/30px "opensans-regular", sans-serif;
+  color: #c0c6c9;
+  margin: 0 15px;
+}
+.pagenav a[rel="prev"] {
+  margin-right: 10px;
+  padding-right: 15px;
+  border-right: 1px dotted #cbcfd1;
+}
+.pagenav a[rel="prev"]:before {
+  /*content: '\f053';*/
+  /*content: '\f104';*/
+  content: "\f177";
+  font-family: "fontawesome";
+  font-size: 15px;
+  margin-right: 12px;
+}
+.pagenav a[rel="next"]:after {
+  /*content: '\f054';*/
+  /*content: '\f105';*/
+  content: "\f178";
+  font-family: "fontawesome";
+  font-size: 15px;
+  margin-left: 12px;
+}
+
+/* f. Archives
+/* ------------------------------------------------------------------ */
+.archive-list h4 {
+  font: 15px/24px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.archive-list ul {
+  list-style: disc;
+  margin-left: 17px;
+}
+
+/* g. Footer
+/* ------------------------------------------------------------------ */
+
+footer {
+  padding-top: 36px;
+  margin-bottom: 42px;
+  font-size: 13px;
+  line-height: 24px;
+  position: relative;
+  color: #34393a;
+}
+footer h3 {
+  font: 14px/24px "opensans-bold", sans-serif;
+  margin-bottom: 9px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+footer p {
+  margin-bottom: 24px;
+}
+
+footer a,
+footer a:visited {
+  color: #6c934d;
+}
+footer a:hover,
+footer a:focus {
+  color: #34393a;
+}
+
+footer .info {
+  padding-right: 30px;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  margin: 0;
+  line-height: 24px;
+}
+footer ul li a,
+footer ul li a:visited {
+  color: #34393a;
+}
+footer ul li a:hover,
+footer ul li a:focus {
+  color: #6c934d;
+}
+
+/* social links */
+footer .social-links {
+  margin: 18px auto 42px auto;
+  padding: 0;
+  text-align: center;
+}
+footer .social-links li {
+  display: inline-block;
+  font-size: 32px;
+  line-height: 48px;
+  padding: 0;
+  margin: 0 16px;
+  color: #444;
+}
+footer .social-links li:first-child {
+  margin-left: 0;
+}
+
+/* Photostream */
+footer .photostream {
+  list-style: none;
+  margin: 12px 0 24px -15px;
+  padding: 0;
+  overflow: hidden;
+}
+footer .photostream li {
+  display: inline-block;
+  margin: 0 0 12px 12px;
+  padding: 0;
+}
+
+footer .photostream li a {
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  padding: 9px;
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+}
+footer .photostream li a img {
+  vertical-align: bottom;
+}
+/* copyright */
+footer .copyright {
+  margin: 0;
+  padding: 24px 18px 6px 18px;
+  clear: both;
+  text-align: center;
+}
+
+/* Go To Top Button */
+#go-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-align: center;
+  display: none;
+}
+#go-top a {
+  text-decoration: none;
+  border: 0 none;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: #494949;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  color: #fff;
+  font-size: 16px;
+  line-height: 48px;
+  border-radius: 3px;
+}
+#go-top a:hover {
+  background: #7ba857;
+}

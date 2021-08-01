@@ -37,16 +37,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/cwedgtail.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
-        
-          
-
-        {% endblock %}
+       
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
