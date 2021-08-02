@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "wagtailcodeblock",
     "modelcluster",
     "taggit",
+    "webpack_loader",
     "wagtail.api.v2",
     "rest_framework",
     "django.contrib.admin",
@@ -130,7 +131,7 @@ STATICFILES_FINDERS = [
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "cwedgtail/static"),
+    os.path.join(BASE_DIR, "chriswedgwood/static"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "collect_static")
@@ -179,3 +180,11 @@ INSTAGRAM_REDIRECT_URI = env("INSTAGRAM_REDIRECT_URI", default="")
 INSTAGRAM_SHORT_TOKEN_URL = "https://graph.instagram.com/access_token"
 
 TEST = "TEST"
+
+
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "BUNDLE_DIR_NAME": "bundles/",
+        "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
+    }
+}
