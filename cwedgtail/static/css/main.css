@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 =====================================================================
 *   Keep It Simple v2.0 Default Stylesheet
@@ -26,9 +30,6 @@ c. Default Styles
 /* ------------------------------------------------------------------ */
 /* a. Webfonts and Icon fonts
  -------------------------------------------------------------------- */
-
-@import url("fonts.css");
-@import url("font-awesome.min.css");
 
 /* ------------------------------------------------------------------
 /* b. Reset
