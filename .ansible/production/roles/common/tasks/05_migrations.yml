@@ -13,13 +13,13 @@
   shell: ". {{ app_dir }}/.env; {{ venv_python }} {{ app_dir }}/manage.py migrate "
   become: yes
 
-#- name: npm install
-#  shell: "cd {{ app_dir }};npm install "
-#  become: yes
+- name: npm install
+  shell: "cd {{ app_dir }};npm install "
+  become: yes
 
-#- name: npm build
-#  shell: "cd {{ app_dir }};npm run build-prod "
-#  become: yes
+- name: npm build
+  shell: "cd {{ app_dir }};export NODE_ENV=production;npm run build-prod "
+  become: yes
 
 - name: Django collect static
   shell: ". {{ app_dir }}/.env; {{ venv_python }} {{ app_dir }}/manage.py collectstatic --noinput "
