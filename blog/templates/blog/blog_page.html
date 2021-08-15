@@ -5,85 +5,39 @@
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-    <div id="content-wrap">
-
-   	<div class="row">
-
-   		<div id="main" class="eight columns">
-
-   			<article class="entry">
-
-					<header class="entry-header">
-
-						<h2 class="entry-title">
-							{{ page.title }}
-						</h2>
-
-						<div class="entry-meta">
-							<ul>
-								<li>{{ post.date }}</li>
-
-                                {% for category in page.categories.all %}
-                             <span class="meta-sep">•</span>
-								<li><a href="#" title="" rel="category tag">{{ category.name }}</a></li>
-
-                            {% endfor %}
-							</ul>
-						</div>
-
-					</header>
-
-
-
-					<div class="entry-content">
-					{{ page.body }}
-                    </div>
-
-					 {% if page.tags.all.count %}
-    <div class="tags">
-        <h3>Tags</h3>
-        {% for tag in page.tags.all %}
-            <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
-        {% endfor %}
-    </div>
-{% endif %}
-<p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-
-
-				</article>
-
-
-
-
-   		</div> <!-- main End -->
-
-   		<div id="sidebar" class="four columns">
-
-   			<div class="widget widget_search">
-                  <h3>Search</h3>
-                  <form action="#">
-
-                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
-                     <input type="submit" value="" class="submit-search">
-
-                  </form>
-               </div>
-
-   			{% include 'blog/blog_category_counts.html' %}
-
-
-
-
-
-   		</div> <!-- end sidebar -->
-
-  		</div> <!-- end row -->
-
-   </div>
-
-
-
-
+    <!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/typography'),
+    ]
+  }
+  ```
+-->
+<div class="relative py-16 bg-gray-900 overflow-hidden lg:mx-60">
+	<div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+	  
+	</div>
+	<div class="relative px-4 sm:px-6 lg:px-8">
+	  <div class="text-lg max-w-prose mx-auto">
+		<h1>
+		  <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow sm:text-4xl">{{ page.title }}</span>
+		</h1>
+		
+	  </div>
+	  <div class="mt-6 prose prose-indigo prose-lg text-gray-100 mx-auto">
+		{{ page.body}}
+	  </div>
+	</div>
+  </div>
+  
 
 
 

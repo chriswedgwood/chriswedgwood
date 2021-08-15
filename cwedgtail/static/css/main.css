@@ -1,0 +1,30 @@
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  ol,
+  ul {
+    @apply list-disc;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+.token.operator {
+  background: none !important;
+}

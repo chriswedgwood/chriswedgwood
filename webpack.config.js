@@ -8,8 +8,9 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './chriswedgwood/static/js/index.js',
+    alpine: './chriswedgwood/static/js/Alpine.js',
+    main:'./cwedgtail/static/css/main.css',
     
-
   }
 
   ,
@@ -61,7 +62,7 @@ module.exports = {
     },
     {
       test: /\.css$/i,
-      use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader'],
     },]
   },
   resolve: {
