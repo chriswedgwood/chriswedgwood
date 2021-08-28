@@ -28,3 +28,29 @@
 .token.operator {
   background: none !important;
 }
+
+
+.block-heading{
+
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  font-weight:bold;
+  margin-bottom: 10px;
+  color: #F59E0B;
+}
+
+
+.block-paragraph p{
+
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-family: Georgia,Cambria,Times New Roman,Times,serif;
+  line-height: 1.5;
+  
+}
+
+
+.block-paragraph i {
+
+  color:#EAC543;
+}
