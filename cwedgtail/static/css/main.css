@@ -1,12 +1,18 @@
 @tailwind base;
 
+@tailwind components;
+@tailwind utilities;
+
+
 @layer base {
   h1 {
     @apply text-2xl;
   }
   h2 {
-    @apply text-xl;
+    @apply text-xl ;
   }
+
+  
   h3 {
     @apply text-lg;
   }
@@ -16,8 +22,7 @@
   }
 }
 
-@tailwind components;
-@tailwind utilities;
+
 
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -25,32 +30,8 @@
  * @author Lea Verou
  */
 
-.token.operator {
+
+ .token.operator {
   background: none !important;
 }
 
-
-.block-heading{
-
-  font-size: 1.75rem;
-  line-height: 1.75rem;
-  font-weight:bold;
-  margin-bottom: 10px;
-  color: #F59E0B;
-}
-
-
-.block-paragraph p{
-
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-  font-family: Georgia,Cambria,Times New Roman,Times,serif;
-  line-height: 1.5;
-  
-}
-
-
-.block-paragraph i {
-
-  color:#EAC543;
-}

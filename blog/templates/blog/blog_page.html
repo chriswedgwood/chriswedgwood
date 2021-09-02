@@ -32,12 +32,15 @@
 		</h1>
 		
 	  </div>
-	  <div class="mt-6 prose prose-indigo prose-lg text-gray-100 mx-auto">
-		{{ page.body}}
-	  </div>
+	
+    <div class="mt-6 prose prose-xl mx-auto ">{% for block in page.body %}
+      {% include_block block %}
+      {% endfor %}
+    </div>
 	</div>
   </div>
   
+
 
 
 
