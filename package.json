@@ -44,16 +44,11 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/runtime": "^7.12.5",
-    "@material-ui/core": "^4.11.2",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
-    "@types/react": "^16.14.2",
     "alpinejs": "^3.2.3",
-    "axios": "^0.21.1",
     "css-loader": "^5.0.1",
-    "file-loader": "^6.2.0",
-    "react": "^16.14.0",
-    "react-bootstrap": "^1.4.3",
-    "react-dom": "^16.14.0"
+    "file-loader": "^6.2.0"
+    
   }
 }
